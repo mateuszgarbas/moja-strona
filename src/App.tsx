@@ -836,22 +836,6 @@ src="https://www.youtube.com/embed/kq6nOJkaReg?si=jG49M9kqEqZKHT5g"
 </div>
 
     {/* STOPKA */}
-     <div className="flex justify-center gap-3 mt-4 md:hidden">
-  <a
-    href="https://m.me/61569722611144"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <img src="/assets/mess.png" alt="Messenger" className="w-8 h-8 hover:scale-110 transition-transform" />
-  </a>
-  <a
-    href="https://instagram.com/mateusz.garbas"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <img src="/assets/instagram.png" alt="Instagram" className="w-8 h-8 hover:scale-110 transition-transform" />
-  </a>
-</div>
     <footer className="py-10 border-t border-neutral-800 text-sm">
       <div className="mx-auto max-w-6xl px-4 flex flex-col md:flex-row gap-4 items-center justify-between">
         <div className="text-neutral-400">© {new Date().getFullYear()} Mateusz Garbas. Wszelkie prawa zastrzeżone.</div>
