@@ -622,17 +622,7 @@ return (
         </div>
       </div>
     </footer>
-
-    {/* CTA (mobile) tylko jeśli nie jesteśmy na sekcji konsultacja */}
-{!window.location.hash.includes("konsultacja") && (
-  <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-neutral-900/80 backdrop-blur border-t border-neutral-800 p-3">
-    <div className="max-w-6xl mx-auto px-2">
-      <a href="#konsultacja" className={goldButtonClass + " block text-center"}>Umów konsultację</a>
-    </div>
-  </div>
-)}
-
-
+    
     {/* STICKY KOSZYK (desktop) */}
     <button
   onClick={() => setCartOpen(true)}
