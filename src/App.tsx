@@ -200,14 +200,15 @@ return (
 </button>
 
           <a
-            href="#konsultacja"
-            className={goldButtonClass}
-            style={{ backgroundColor: GOLD }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = GOLD_HOVER)}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = GOLD)}
-          >
-            Umów konsultację
-          </a>
+  href="#konsultacja"
+  className={goldButtonClass}
+  style={{ backgroundColor: GOLD }}
+  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = GOLD_HOVER)}
+  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = GOLD)}
+>
+  Umów konsultację
+</a>
+
         </div>
       </nav>
     </header>
@@ -622,7 +623,6 @@ return (
         </div>
       </div>
     </footer>
-    
     {/* STICKY KOSZYK (desktop) */}
     <button
   onClick={() => setCartOpen(true)}
