@@ -4,6 +4,21 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Edge */
 }
+@keyframes sparkle {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2) rotate(12deg);
+    opacity: 0.9;
+  }
+}
+
+.sparkle {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
 
 .scrollbar-hide {
   -ms-overflow-style: none; /* Internet Explorer i Edge */

@@ -581,7 +581,8 @@ return (
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill={GOLD}
-        className="w-6 h-6 transition-transform transform hover:scale-125 hover:rotate-12"
+        className={`w-6 h-6 transition-transform transform hover:scale-125 hover:rotate-12 sparkle`}
+        style={{ animationDelay: `${i * 0.3}s` }}
       >
         <path
           fillRule="evenodd"
@@ -592,6 +593,7 @@ return (
     ))}
   </div>
 </h2>
+
 
 
         </div>
