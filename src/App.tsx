@@ -5,7 +5,6 @@ import ReactCompareImage from "react-compare-image";
 
 /** Kolory */
 const GOLD = "#d4af37";
-const GOLD_HOVER = "#bfa035";
 const CartIcon = ({ className = "w-6 h-6" }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
