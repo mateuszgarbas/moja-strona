@@ -200,15 +200,11 @@ return (
 
          <a
   href="#konsultacja"
-  className={`${goldButtonClass} flex items-center justify-center px-3 py-1 text-sm md:px-6 md:py-3 md:text-base`}
+  className={`${goldButtonClass} inline-flex items-center justify-center leading-none px-3 py-1 text-sm md:px-6 md:py-3 md:text-base`}
   style={{ backgroundColor: GOLD }}
 >
   Umów konsultację
 </a>
-
-
-
-
 
         </div>
       </nav>
