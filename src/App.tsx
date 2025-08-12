@@ -2,8 +2,18 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import ReactCompareImage from "react-compare-image";
 
-
 /** Kolory */
+const startPlaces = 7;
+const [placesLeft, setPlacesLeft] = useState(startPlaces);
+
+useEffect(() => {
+  // tu możesz podłączyć API lub ustawić ręcznie
+  const timer = setInterval(() => {
+    setPlacesLeft(prev => (prev > 0 ? prev - 1 : 0));
+  }, 115000); // co 15 sekund ubywa jedno miejsce (tylko przykład)
+  return () => clearInterval(timer);
+}, []);
+
 const GOLD = "#d4af37";
 const CartIcon = ({ className = "w-6 h-6" }) => (
   <svg
@@ -215,29 +225,47 @@ return (
     </header>
 
     {/* HERO */}
-    <section id="top" className="relative overflow-hidden">
-      <div className="mx-auto max-w-6xl px-4 py-20 grid md:grid-cols-2 gap-10 items-center">
-        <div>
-          <motion.h1 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-4xl md:text-5xl font-bold leading-tight text-center md:text-left">
-            Schudnij i zbuduj formę życia w 90 dni
-          </motion.h1>
-          <p className="mt-4 text-neutral-300 max-w-prose text-xl text-center md:text-left">
-            Prowadzenie treningowe online dopasowane do Ciebie. Plany, analiza postępów i stałe wsparcie.
-          </p>
-          <div className="mt-6 flex gap-4 flex-wrap justify-center md:justify-start">
-            <a href="#konsultacja" className={`${goldButtonClass} text-xl px-8 py-4 font-bold`}>
-              Umów konsultację
-            </a>
-            <a href="#ebooki" className="rounded-2xl border border-neutral-700 px-8 py-4 text-xl font-bold hover:border-[#d4af37]">
-              Zobacz e-booki  
-            </a>
-          </div>
-        </div>
-        <div className="relative">
-          <img src="/assets/trener.jpg" alt="Mateusz Garbas" className="w-full aspect-[4/5] object-cover rounded-3xl border border-neutral-700" />
-        </div>
+<section id="top" className="relative overflow-hidden">
+  <div className="mx-auto max-w-6xl px-4 py-20 grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <motion.h1
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-4xl md:text-5xl font-bold leading-tight text-center md:text-left"
+      >
+        Schudnij i zbuduj formę życia w 90 dni
+      </motion.h1>
+      <p className="mt-4 text-neutral-300 max-w-prose text-xl text-center md:text-left">
+        Prowadzenie treningowe online dopasowane do Ciebie. Plany, analiza postępów i stałe wsparcie.
+      </p>
+
+      {/* LICZNIK */}
+      <div
+        className="mt-6 px-6 py-3 rounded-2xl text-lg font-semibold text-center md:text-left"
+        style={{
+          background: "rgba(255,255,255,0.05)",
+          border: `1px solid ${GOLD}`,
+          color: GOLD
+        }}
+      >
+        Pozostało <span className="text-2xl font-bold">{placesLeft}</span> miejsc w tym miesiącu
       </div>
-    </section>
+
+      <div className="mt-6 flex gap-4 flex-wrap justify-center md:justify-start">
+        <a href="#konsultacja" className={`${goldButtonClass} text-xl px-8 py-4 font-bold`}>
+          Umów konsultację
+        </a>
+        <a href="#ebooki" className="rounded-2xl border border-neutral-700 px-8 py-4 text-xl font-bold hover:border-[#d4af37]">
+          Zobacz e-booki  
+        </a>
+      </div>
+    </div>
+    <div className="relative">
+      <img src="/assets/trener.jpg" alt="Mateusz Garbas" className="w-full aspect-[4/5] object-cover rounded-3xl border border-neutral-700" />
+    </div>
+  </div>
+</section>
 
     {/* DLACZEGO */}
     <section id="dlaczego" className="py-12 border-t border-neutral-800">
