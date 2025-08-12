@@ -434,8 +434,14 @@ return (
         </div>
 
         <div className="mt-8 flex justify-center">
-          <a href="#konsultacja" className={goldButtonClass}>Umów konsultację</a>
-        </div>
+  <a
+    href="#konsultacja"
+    className="px-8 py-4 text-xl font-bold rounded-2xl text-black bg-white shadow-[0_0_15px_rgba(255,255,255,0.8)] hover:shadow-[0_0_25px_rgba(255,255,255,1)] transition-all duration-300"
+  >
+    Umów konsultację
+  </a>
+</div>
+
       </div>
     </section>
 
@@ -538,24 +544,30 @@ return (
           </h2>
         </div>
         <div
-          ref={marqueeRef}
-          className="relative mt-8 overflow-x-hidden overflow-y-visible"
-          onMouseEnter={() => setIsHovering(true)}
-          onMouseLeave={() => setIsHovering(false)}
-          onTouchStart={() => setIsHovering(true)}
-          onTouchEnd={() => setIsHovering(false)}
-        >
-          <div className="flex gap-4 w-max">
-            {[...REVIEWS, ...REVIEWS].map(([name, text], idx) => (
-              <div key={idx} className="inline-block align-top">
-                <div className="w-[280px] sm:w-[320px] md:w-[360px] rounded-2xl border border-neutral-800 p-6 bg-neutral-900/40 h-full">
-                  <p className="text-sm text-neutral-300">“{text}”</p>
-                  <div className="mt-3 text-xs text-neutral-400">— {name}</div>
-                </div>
-              </div>
-            ))}
-          </div>
+  ref={marqueeRef}
+  className="relative mt-8 overflow-x-auto overflow-y-visible snap-x snap-mandatory scroll-smooth scrollbar-hide"
+  onMouseEnter={() => setIsHovering(true)}
+  onMouseLeave={() => setIsHovering(false)}
+  onTouchStart={() => setIsHovering(true)}
+  onTouchEnd={() => setIsHovering(false)}
+>
+  <div className="flex gap-5 w-max">
+    {[...REVIEWS, ...REVIEWS].map(([name, text], idx) => (
+      <div
+        key={idx}
+        className="inline-block align-top snap-center"
+        style={{ flex: "0 0 auto" }}
+      >
+        <div className="w-[80vw] sm:w-[340px] md:w-[360px] rounded-2xl border border-neutral-800 p-6 bg-neutral-900/40 h-full">
+          <p className="text-base leading-relaxed text-neutral-300">“{text}”</p>
+          <div className="mt-3 text-sm text-neutral-400">— {name}</div>
         </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+
       </div>
     </section>
 
