@@ -622,6 +622,23 @@ return (
           <a href="#" className="hover:opacity-80">Polityka prywatności</a>
           <a href="#" className="hover:opacity-80">Wysyłka i płatności</a>
         </div>
+        <div className="flex gap-3 mt-4 md:hidden">
+  <a
+    href="https://m.me/61569722611144"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img src="/assets/mess.png" alt="Messenger" className="w-8 h-8 hover:scale-110 transition-transform" />
+  </a>
+  <a
+    href="https://instagram.com/mateusz.garbas"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <img src="/assets/instagram.png" alt="Instagram" className="w-8 h-8 hover:scale-110 transition-transform" />
+  </a>
+</div>
+
       </div>
     </footer>
     {/* STICKY KOSZYK (desktop) */}
@@ -689,7 +706,7 @@ return (
 
    {/* Floating Messenger / Instagram */}
 {!cartOpen && (
-  <div className="fixed bottom-24 right-6 flex flex-col gap-3 z-50">
+  <div className="hidden md:flex fixed bottom-24 right-6 flex-col gap-3 z-50">
     <a
       href="https://m.me/61569722611144"
       target="_blank"
