@@ -200,18 +200,24 @@ const [lastScrollY, setLastScrollY] = useState(0);
 useEffect(() => {
   const handleScroll = () => {
     if (window.innerWidth < 768) { // tylko mobile
-      if (window.scrollY > lastScrollY) {
-        setIsVisible(false); // przewijanie w dół
-      } else {
-        setIsVisible(true); // przewijanie w górę
+      const currentScroll = window.scrollY;
+
+      if (currentScroll > lastScrollY && currentScroll > 50) {
+        // przewijanie w dół i nie jesteśmy na samej górze
+        setIsVisible(false);
+      } else if (lastScrollY - currentScroll > 50) {
+        // przewijanie w górę o więcej niż 50px
+        setIsVisible(true);
       }
-      setLastScrollY(window.scrollY);
+
+      setLastScrollY(currentScroll);
     }
   };
 
   window.addEventListener("scroll", handleScroll);
   return () => window.removeEventListener("scroll", handleScroll);
 }, [lastScrollY]);
+
 
 return (
   <div className="min-h-screen bg-black text-white antialiased">
