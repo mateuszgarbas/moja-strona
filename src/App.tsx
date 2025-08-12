@@ -273,14 +273,14 @@ return (
 
       {/* Licznik */}
       <div
-  className="mt-6 px-4 py-2 rounded-2xl text-lg font-semibold flex items-center justify-center text-center md:justify-start md:text-left"
+  className="mt-6 inline-flex items-center px-4 py-2 rounded-2xl text-lg font-semibold"
   style={{
     backgroundColor: "#ffffff", // białe tło
     border: "1px solid #ffffff",
     color: "#000000" // czarny tekst
   }}
 >
-  Pozostało{" "}
+  Pozostało
   <span
     ref={countRef}
     className="text-2xl font-bold pulse-red mx-3"
@@ -290,6 +290,7 @@ return (
   </span>
   miejsc na współpracę w tym miesiącu
 </div>
+
 
 
     </div>
@@ -534,7 +535,7 @@ return (
         <p className="text-neutral-300 mt-2 text-xl">Kilka słów o mnie, moim podejściu do treningów i jak wygląda współpraca krok po kroku.</p>
         <div className="mt-8 aspect-video w-full rounded-2xl border border-neutral-800 overflow-hidden bg-neutral-900/40">
           <iframe
-            src="https://www.youtube.com/embed/8AwVRlXsxlA?si=1x--g3CMQzubmkEK"
+src="https://www.youtube.com/embed/kq6nOJkaReg?si=jG49M9kqEqZKHT5g"
             title="O mnie - Mateusz Garbas"
             className="w-full h-full"
             frameBorder={0}
