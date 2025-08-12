@@ -122,13 +122,13 @@ function CountUp({ end, duration = 1.6, suffix = "+" }: { end: number; duration?
 }
 
 export default function App() {
-  const [placesLeft, setPlacesLeft] = useState(5);
+  const [placesLeft, setPlacesLeft] = useState(7);
 const countRef = useRef<HTMLSpanElement | null>(null);
 
 useEffect(() => {
   const timer = setInterval(() => {
     setPlacesLeft(prev => (prev > 0 ? prev - 1 : 0));
-  }, 75000);
+  }, 155000);
   return () => clearInterval(timer);
 }, []);
 
@@ -273,15 +273,24 @@ return (
 
       {/* Licznik */}
       <div
-        className="mt-6 px-6 py-3 rounded-2xl text-lg font-semibold text-center md:text-left"
-        style={{
-          background: "rgba(255,255,255,0.05)",
-          border: `1px solid ${GOLD}`,
-          color: GOLD
-        }}
-      >
-        Pozostało <span ref={countRef} className="text-2xl font-bold">{placesLeft}</span> miejsc w tym miesiącu
-      </div>
+  className="mt-6 px-6 py-3 rounded-2xl text-lg font-semibold flex items-center justify-center text-center md:justify-start md:text-left"
+  style={{
+    backgroundColor: "#ffffff", // białe tło
+    border: "1px solid #ffffff",
+    color: "#000000" // czarny tekst
+  }}
+>
+  Zostało{" "}
+  <span
+    ref={countRef}
+    className="text-2xl font-bold pulse-red"
+    style={{ color: "red" }}
+  >
+    {placesLeft}
+  </span>{" "}
+  miejsc na prowadzenie w tym miesiącu
+</div>
+
     </div>
 
     {/* Prawa kolumna (obrazek) */}

@@ -35,6 +35,21 @@
   animation: neonPulse 2.5s ease-in-out infinite;
 }
 
+@keyframes pulseWarning {
+  0%, 100% {
+    transform: scale(1);
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.6);
+  }
+  50% {
+    transform: scale(1.2);
+    text-shadow: 0 0 12px rgba(255, 0, 0, 0.9);
+  }
+}
+
+.pulse-red {
+  animation: pulseWarning 1.2s ease-in-out infinite;
+}
+
 
 
 .scrollbar-hide {
