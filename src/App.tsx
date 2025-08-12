@@ -403,8 +403,8 @@ return (
         </div>
 
         {/* Tabela porównawcza */}
-        <div className="mt-12 overflow-x-auto">
-          <table className="min-w-full text-base border border-neutral-800 rounded-2xl overflow-hidden">
+        <div className="mt-12 overflow-x-auto md:overflow-x-visible">
+  <table className="w-full text-xs md:text-sm border border-neutral-800 rounded-2xl overflow-hidden table-fixed">
   <thead className="bg-neutral-900/60">
     <tr>
       <th className="p-3.5 text-left text-lg font-semibold">Funkcja</th>
