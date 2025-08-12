@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import ReactCompareImage from "react-compare-image";
 
 
@@ -463,8 +463,20 @@ return (
           />
         </div>
         <div className="mt-4">
-          <a href="#konsultacja" className={goldButtonClass}>Umów konsultację</a>
-        </div>
+  <a
+    href="#konsultacja"
+    className="px-8 py-4 text-lg font-bold rounded-2xl shadow-lg transition-transform active:scale-[.98]"
+    style={{
+      backgroundColor: "#ffffff",
+      color: "#000000",
+      boxShadow: "0 0 12px rgba(255, 255, 255, 0.9)"
+    }}
+  >
+    Umów konsultację
+  </a>
+</div>
+
+
       </div>
     </section>
 
@@ -472,7 +484,7 @@ return (
     <section id="konsultacja" className="py-16 border-t border-neutral-800">
       <div className="mx-auto max-w-6xl px-4">
         <h2 className="text-3xl font-bold text-center" style={{ color: GOLD }}>
-          Umów konsultację
+          WYBIERZ TERMIN SWOJEJ KONSULTACJI
         </h2>
         <div className="mt-8 rounded-2xl border border-neutral-800 overflow-hidden bg-neutral-900/60 shadow-lg p-3 max-w-3xl mx-auto">
           <iframe
@@ -502,15 +514,21 @@ return (
           </h2>
         </div>
         <p className="text-neutral-300 mt-2 max-w-prose mx-auto text-center text-xl">Przeczytaj i wdrażaj od razu.</p>
-        <div className="mt-8 grid md:grid-cols-2 gap-6">
-          {PRODUCTS.map((e) => (
-            <div key={e.id} className="rounded-2xl border border-neutral-800 p-6 bg-neutral-900/40 flex flex-col justify-between h-full">
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md mx-auto md:max-w-none">
+  {PRODUCTS.map((e) => (
+    <div
+      key={e.id}
+      className="rounded-2xl border border-neutral-800 p-4 md:p-6 bg-neutral-900/40 flex flex-col justify-between h-full"
+    >
+
               <div>
                 <img
   src={e.image}
   alt={`Okładka e-booka: ${e.title}`}
-  className="w-55 aspect-[2/3] object-cover rounded-xl border border-neutral-700 mx-auto"
+  className="w-32 md:w-40 aspect-[2/3] object-cover rounded-xl border border-neutral-700 mx-auto"
 />
+
+
 
                 <h3 className="mt-4 text-xl font-semibold">{e.title}</h3>
                 <p className="text-neutral-300 mt-1 text-xl">{e.desc}</p>
@@ -614,7 +632,7 @@ return (
     </section>
 
     {/* STOPKA */}
-     <div className="flex gap-3 mt-4 md:hidden">
+     <div className="flex justify-center gap-3 mt-4 md:hidden">
   <a
     href="https://m.me/61569722611144"
     target="_blank"
