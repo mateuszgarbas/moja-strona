@@ -313,14 +313,14 @@ return (
   key={idx}
   className="rounded-2xl border border-neutral-800 p-4 bg-neutral-900/40 flex flex-col justify-between h-full"
 >
-  <div className="w-full h-[500px] overflow-hidden rounded-xl">
+<div className="w-full aspect-[4/5] overflow-hidden rounded-xl">
     <ReactCompareImage
-      leftImage={c.before}
-      rightImage={c.after}
-      sliderLineColor={GOLD}
-      leftImageCss={{ objectFit: "cover", height: "100%" }}
-      rightImageCss={{ objectFit: "cover", height: "100%" }}
-    />
+  leftImage={c.before}
+  rightImage={c.after}
+  sliderLineColor={GOLD}
+  leftImageCss={{ objectFit: "cover", width: "100%", height: "100%" }}
+  rightImageCss={{ objectFit: "cover", width: "100%", height: "100%" }}
+/>
   </div>
   <div className="mt-4 text-center">
     <div className="font-semibold">{c.name}</div>
@@ -389,9 +389,9 @@ return (
               <h3 className="text-xl font-semibold">{p.title}</h3>
               <ul className="mt-4 space-y-2 text-lg leading-relaxed text-neutral-300">
   {p.features.map((f) => (
-    <li key={f} className="flex items-start gap-2">
-      <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full" style={{ background: GOLD }} /> {f}
-    </li>
+    <li key={f} className="flex items-center gap-2">
+  <span className="inline-block h-2 w-2 rounded-full" style={{ background: GOLD }} /> {f}
+</li>
   ))}
 </ul>
 
@@ -465,7 +465,7 @@ return (
         <div className="mt-4">
   <a
     href="#konsultacja"
-    className="px-8 py-4 text-lg font-bold rounded-2xl shadow-lg transition-transform active:scale-[.98]"
+    className="px-6 py-3 text-lg font-bold rounded-2xl shadow-lg transition-transform active:scale-[.98]"
     style={{
       backgroundColor: "#ffffff",
       color: "#000000",
