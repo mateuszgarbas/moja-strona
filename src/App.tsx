@@ -614,15 +614,7 @@ return (
     </section>
 
     {/* STOPKA */}
-    <footer className="py-10 border-t border-neutral-800 text-sm">
-      <div className="mx-auto max-w-6xl px-4 flex flex-col md:flex-row gap-4 items-center justify-between">
-        <div className="text-neutral-400">© {new Date().getFullYear()} Mateusz Garbas. Wszelkie prawa zastrzeżone.</div>
-        <div className="flex gap-4 text-neutral-400">
-          <a href="#" className="hover:opacity-80">Regulamin</a>
-          <a href="#" className="hover:opacity-80">Polityka prywatności</a>
-          <a href="#" className="hover:opacity-80">Wysyłka i płatności</a>
-        </div>
-        <div className="flex gap-3 mt-4 md:hidden">
+     <div className="flex gap-3 mt-4 md:hidden">
   <a
     href="https://m.me/61569722611144"
     target="_blank"
@@ -638,7 +630,14 @@ return (
     <img src="/assets/instagram.png" alt="Instagram" className="w-8 h-8 hover:scale-110 transition-transform" />
   </a>
 </div>
-
+    <footer className="py-10 border-t border-neutral-800 text-sm">
+      <div className="mx-auto max-w-6xl px-4 flex flex-col md:flex-row gap-4 items-center justify-between">
+        <div className="text-neutral-400">© {new Date().getFullYear()} Mateusz Garbas. Wszelkie prawa zastrzeżone.</div>
+        <div className="flex gap-4 text-neutral-400">
+          <a href="#" className="hover:opacity-80">Regulamin</a>
+          <a href="#" className="hover:opacity-80">Polityka prywatności</a>
+          <a href="#" className="hover:opacity-80">Wysyłka i płatności</a>
+        </div>
       </div>
     </footer>
     {/* STICKY KOSZYK (desktop) */}
