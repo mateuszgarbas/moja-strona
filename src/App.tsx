@@ -313,15 +313,26 @@ return (
   key={idx}
   className="rounded-2xl border border-neutral-800 p-4 bg-neutral-900/40 flex flex-col justify-between h-full"
 >
-<div className="w-full aspect-[4/5] overflow-hidden rounded-xl">
-    <ReactCompareImage
-  leftImage={c.before}
-  rightImage={c.after}
-  sliderLineColor={GOLD}
-  leftImageCss={{ objectFit: "cover", width: "100%", height: "100%" }}
-  rightImageCss={{ objectFit: "cover", width: "100%", height: "100%" }}
-/>
-  </div>
+<div className="w-full aspect-[3/4] overflow-hidden rounded-xl">
+  <ReactCompareImage
+    leftImage={c.before}
+    rightImage={c.after}
+    sliderLineColor={GOLD}
+    leftImageCss={{
+  objectFit: "cover",
+  width: "100%",
+  height: "100%",
+  objectPosition: "center"
+}}
+rightImageCss={{
+  objectFit: "cover",
+  width: "100%",
+  height: "100%",
+  objectPosition: "center"
+}}
+
+  />
+</div>
   <div className="mt-4 text-center">
     <div className="font-semibold">{c.name}</div>
     <div className="text-neutral-300 text-base min-h-[40px]">{c.desc}</div>
@@ -465,7 +476,7 @@ return (
         <div className="mt-4">
   <a
     href="#konsultacja"
-    className="px-6 py-3 text-lg font-bold rounded-2xl shadow-lg transition-transform active:scale-[.98]"
+    className="px-4 py-2 text-lg font-bold rounded-2xl shadow-lg transition-transform active:scale-[.98]"
     style={{
       backgroundColor: "#ffffff",
       color: "#000000",
