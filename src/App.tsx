@@ -1,9 +1,28 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import ReactCompareImage from "react-compare-image";
+
 
 /** Kolory */
 const GOLD = "#d4af37";
 const GOLD_HOVER = "#bfa035";
+const CartIcon = ({ className = "w-6 h-6" }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={1.8}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <circle cx="9" cy="21" r="1" />
+    <circle cx="20" cy="21" r="1" />
+    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+  </svg>
+);
+
 
 /** Klasy przycisków */
 const goldButtonClass =
@@ -167,14 +186,19 @@ return (
         </div>
 
         <div className="flex items-center gap-3">
-          <button onClick={() => setCartOpen(true)} className="relative rounded-2xl border border-neutral-700 px-4 py-2 text-sm hover:border-[#d4af37]">
-            Koszyk
-            {cart.length > 0 && (
-              <span className="absolute -top-2 -right-2 text-xs bg-white text-black rounded-full px-2 py-0.5">
-                {cart.reduce((n, i) => n + i.qty, 0)}
-              </span>
-            )}
-          </button>
+          <button
+  onClick={() => setCartOpen(true)}
+  className="relative rounded-2xl border border-neutral-700 p-2 hover:border-[#d4af37]"
+  aria-label="Koszyk"
+>
+  <CartIcon className="w-6 h-6" />
+  {cart.length > 0 && (
+    <span className="absolute -top-2 -right-2 text-xs bg-white text-black rounded-full px-2 py-0.5">
+      {cart.reduce((n, i) => n + i.qty, 0)}
+    </span>
+  )}
+</button>
+
           <a
             href="#konsultacja"
             className={goldButtonClass}
@@ -195,7 +219,7 @@ return (
           <motion.h1 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-4xl md:text-5xl font-bold leading-tight text-center md:text-left">
             Schudnij i zbuduj formę życia w 90 dni
           </motion.h1>
-          <p className="mt-4 text-neutral-300 max-w-prose text-center md:text-left">
+          <p className="mt-4 text-neutral-300 max-w-prose text-xl text-center md:text-left">
             Prowadzenie treningowe online dopasowane do Ciebie. Plany, analiza postępów i stałe wsparcie.
           </p>
           <div className="mt-6 flex gap-4 flex-wrap justify-center md:justify-start">
@@ -203,7 +227,7 @@ return (
               Umów konsultację
             </a>
             <a href="#ebooki" className="rounded-2xl border border-neutral-700 px-8 py-4 text-xl font-bold hover:border-[#d4af37]">
-              Zobacz e-booki
+              Zobacz e-booki  
             </a>
           </div>
         </div>
@@ -237,7 +261,7 @@ return (
               </span>
               <span>lat doświadczenia</span>
             </div>
-            <div className="text-neutral-300 text-sm mt-1">Setki godzin na sali i w prowadzeniu online.</div>
+            <div className="text-neutral-300 text-base mt-1">Setki godzin na sali i w prowadzeniu online.</div>
           </div>
           <div className="rounded-2xl border border-neutral-800 p-5 bg-neutral-900/40">
             <div className="text-xl font-semibold flex items-end gap-1">
@@ -246,16 +270,66 @@ return (
               </span>
               <span>zadowolonych klientów</span>
             </div>
-            <div className="text-neutral-300 text-sm mt-1">Realne metamorfozy i utrzymane efekty.</div>
+            <div className="text-neutral-300 text-base mt-1">Realne metamorfozy i utrzymane efekty.</div>
           </div>
           <div className="rounded-2xl border border-neutral-800 p-5 bg-neutral-900/40">
             <div className="text-xl font-semibold">Gwarancja satysfakcji</div>
-            <div className="text-neutral-300 text-sm mt-1">Brak postępów według planu = miesiąc gratis.</div>
+            <div className="text-neutral-300 text-base mt-1">Brak postępów według planu = miesiąc gratis.</div>
           </div>
         </div>
       </div>
     </section>
+{/* PRZED I PO */}
+<section id="przedpo" className="py-16 border-t border-neutral-800">
+  <div className="mx-auto max-w-6xl px-4">
+    <h2
+      className="text-4xl md:text-5xl font-extrabold mb-10 text-center px-6 py-3 rounded-2xl w-fit mx-auto"
+      style={{
+        color: GOLD,
+        background: "rgba(255, 255, 255, 0.05)",
+        border: `1px solid ${GOLD}`
+      }}
+    >
+      Efekty moich podopiecznych
+    </h2>
+    <div className="text-lg grid md:grid-cols-2 gap-8">
+      {[
+        {
+          before: "/assets/przed2.png",
+          after: "/assets/po2.png",
+          name: "Kasia",
+          desc: "3 miesiące – -8 kg, poprawa siły i wytrzymałości."
+        },
+        {
+          before: "/assets/przed1.png",
+          after: "/assets/po1.png",
+          name: "Marek",
+          desc: "5 miesięcy – +5 kg masy mięśniowej."
+        }
+      ].map((c, idx) => (
+       <div
+  key={idx}
+  className="rounded-2xl border border-neutral-800 p-4 bg-neutral-900/40 flex flex-col justify-between h-full"
+>
+  <div className="w-full h-[500px] overflow-hidden rounded-xl">
+    <ReactCompareImage
+      leftImage={c.before}
+      rightImage={c.after}
+      sliderLineColor={GOLD}
+      leftImageCss={{ objectFit: "cover", height: "100%" }}
+      rightImageCss={{ objectFit: "cover", height: "100%" }}
+    />
+  </div>
+  <div className="mt-4 text-center">
+    <div className="font-semibold">{c.name}</div>
+    <div className="text-neutral-300 text-base min-h-[40px]">{c.desc}</div>
+  </div>
+</div>
 
+      ))}
+    </div>
+  </div>
+</section>
     {/* WSPÓŁPRACA */}
     <section id="kroki" className="py-16 border-t border-neutral-800">
       <div className="mx-auto max-w-6xl px-4">
@@ -279,9 +353,9 @@ return (
             { t: "Monitoring", d: "Raporty wg pakietu i korekty planu." }
           ].map((s, idx) => (
             <div key={idx} className="rounded-2xl border border-neutral-800 p-6 bg-neutral-900/40 text-center">
-              <div className="text-4xl font-bold mb-2" style={{ color: GOLD }}>{idx + 1}</div>
-              <div className="font-semibold">{s.t}</div>
-              <div className="text-sm text-neutral-300 mt-1">{s.d}</div>
+              <div className="text-5xl font-bold mb-2" style={{ color: GOLD }}>{idx + 1}</div>
+              <div className="text-xl font-semibold">{s.t}</div>
+              <div className="text-base text-neutral-300 mt-1">{s.d}</div>
             </div>
           ))}
         </div>
@@ -303,7 +377,7 @@ return (
             Oferta
           </h2>
         </div>
-        <p className="text-neutral-300 mt-2 max-w-prose mx-auto text-center">
+        <p className="text-neutral-300 mt-2 max-w-prose mx-auto text-center text-lg">
           Wszystkie opcje zawierają pełne prowadzenie treningowe online oraz monitorowanie diety. Do każdego pakietu dorzucam gwarancję satysfakcji – jeśli nie zrobisz postępu wg planu i raportów, otrzymasz kolejny miesiąc gratis pod moją opieką.
         </p>
 
@@ -311,13 +385,14 @@ return (
           {PACKAGES.map((p) => (
             <div key={p.title} className="rounded-2xl border border-neutral-800 p-6 pb-12 bg-neutral-900/40">
               <h3 className="text-xl font-semibold">{p.title}</h3>
-              <ul className="mt-4 space-y-2 text-sm text-neutral-300">
-                {p.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2">
-                    <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full" style={{ background: GOLD }} /> {f}
-                  </li>
-                ))}
-              </ul>
+              <ul className="mt-4 space-y-2 text-lg leading-relaxed text-neutral-300">
+  {p.features.map((f) => (
+    <li key={f} className="flex items-start gap-2">
+      <span className="mt-1 inline-block h-1.5 w-1.5 rounded-full" style={{ background: GOLD }} /> {f}
+    </li>
+  ))}
+</ul>
+
               <div className="mt-10">
                 <a href="#konsultacja" className={whiteButtonClass}>Zacznij teraz</a>
               </div>
@@ -327,33 +402,35 @@ return (
 
         {/* Tabela porównawcza */}
         <div className="mt-12 overflow-x-auto">
-          <table className="min-w-full text-sm border border-neutral-800 rounded-2xl overflow-hidden">
-            <thead className="bg-neutral-900/60">
-              <tr>
-                <th className="p-3 text-left">Funkcja</th>
-                {PACKAGES.map((p) => (
-                  <th key={p.title} className="p-3 text-left">{p.title}</th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {[
-                { f: "Raporty", v: ["co 4 tyg.", "co 2 tyg.", "co tydzień"] },
-                { f: "Prowadzenie treningowe", v: ["✓", "✓", "✓"] },
-                { f: "Monitorowanie diety", v: ["✓", "✓", "✓"] },
-                { f: "Zniżka na e-booki / e-book", v: ["—", "20%", "E-book gratis"] },
-                { f: "Analiza stylu motywacji", v: ["—", "✓", "✓"] },
-                { f: "Kontakt priorytetowy", v: ["—", "—", "✓"] }
-              ].map((row, i) => (
-                <tr key={i} className="odd:bg-neutral-950">
-                  <td className="p-3 border-t border-neutral-800">{row.f}</td>
-                  {row.v.map((val, j) => (
-                    <td key={j} className="p-3 border-t border-neutral-800">{val}</td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <table className="min-w-full text-base border border-neutral-800 rounded-2xl overflow-hidden">
+  <thead className="bg-neutral-900/60">
+    <tr>
+      <th className="p-3.5 text-left text-lg font-semibold">Funkcja</th>
+      {PACKAGES.map((p) => (
+        <th key={p.title} className="p-3.5 text-left text-lg font-semibold">{p.title}</th>
+      ))}
+    </tr>
+  </thead>
+  <tbody>
+    {[
+      { f: "Raporty", v: ["co 4 tyg.", "co 2 tyg.", "co tydzień"] },
+      { f: "Prowadzenie treningowe", v: ["✓", "✓", "✓"] },
+      { f: "Monitorowanie diety", v: ["✓", "✓", "✓"] },
+      { f: "Zniżka na e-booki / e-book", v: ["—", "20%", "E-book gratis"] },
+      { f: "Analiza stylu motywacji", v: ["—", "✓", "✓"] },
+      { f: "Kontakt priorytetowy", v: ["—", "—", "✓"] }
+    ].map((row, i) => (
+      <tr key={i} className="odd:bg-neutral-950">
+        <td className="p-3.5 border-t border-neutral-800">{row.f}</td>
+        {row.v.map((val, j) => (
+          <td key={j} className="p-3.5 border-t border-neutral-800">{val}</td>
+        ))}
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+
         </div>
 
         <div className="mt-8 flex justify-center">
@@ -366,7 +443,7 @@ return (
     <section id="o-mnie-wideo" className="py-16 border-t border-neutral-800">
       <div className="mx-auto max-w-4xl px-4 text-center">
         <h2 className="text-3xl font-bold text-center" style={{ color: GOLD }}>Poznaj mnie lepiej</h2>
-        <p className="text-neutral-300 mt-2">Kilka słów o mnie, moim podejściu do treningów i jak wygląda współpraca krok po kroku.</p>
+        <p className="text-neutral-300 mt-2 text-xl">Kilka słów o mnie, moim podejściu do treningów i jak wygląda współpraca krok po kroku.</p>
         <div className="mt-8 aspect-video w-full rounded-2xl border border-neutral-800 overflow-hidden bg-neutral-900/40">
           <iframe
             src="https://www.youtube.com/embed/8AwVRlXsxlA?si=1x--g3CMQzubmkEK"
@@ -402,7 +479,8 @@ return (
 
     {/* E-BOOKI */}
     <section id="ebooki" className="py-16">
-      <div className="mx-auto max-w-6xl px-4">
+  <div className="mx-auto max-w-4xl px-4">
+
         <div className="text-center">
           <h2
             className="text-4xl md:text-5xl font-extrabold mb-6 px-6 py-3 rounded-2xl mx-auto w-fit"
@@ -415,19 +493,20 @@ return (
             E-Booki
           </h2>
         </div>
-        <p className="text-neutral-300 mt-2 max-w-prose mx-auto text-center">Przeczytaj i wdrażaj od razu.</p>
+        <p className="text-neutral-300 mt-2 max-w-prose mx-auto text-center text-xl">Przeczytaj i wdrażaj od razu.</p>
         <div className="mt-8 grid md:grid-cols-2 gap-6">
           {PRODUCTS.map((e) => (
             <div key={e.id} className="rounded-2xl border border-neutral-800 p-6 bg-neutral-900/40 flex flex-col justify-between h-full">
               <div>
                 <img
-                  src={e.image}
-                  alt={`Okładka e-booka: ${e.title}`}
-                  className="w-40 aspect-[2/3] object-cover rounded-xl border border-neutral-700 mx-auto"
-                />
+  src={e.image}
+  alt={`Okładka e-booka: ${e.title}`}
+  className="w-55 aspect-[2/3] object-cover rounded-xl border border-neutral-700 mx-auto"
+/>
+
                 <h3 className="mt-4 text-xl font-semibold">{e.title}</h3>
-                <p className="text-neutral-300 mt-1 text-sm">{e.desc}</p>
-                <ul className="list-disc list-inside mt-3 text-sm text-neutral-400">
+                <p className="text-neutral-300 mt-1 text-xl">{e.desc}</p>
+                <ul className="list-disc list-inside mt-3 text-xl text-neutral-400">
                   <li>Szybsze efekty</li>
                   <li>Proste i praktyczne wskazówki</li>
                   <li>Bez zbędnych restrykcji</li>
@@ -486,16 +565,34 @@ return (
         <h2 className="text-3xl font-bold text-center" style={{ color: GOLD }}>Najczęstsze pytania</h2>
         <div className="mt-6 grid md:grid-cols-2 gap-6">
           {[
-            ["Czy współpraca jest dla początkujących?", "Tak. Na starcie robię audyt, a plany dostosowuję do Twojego poziomu i sprzętu."],
-            ["Jak wygląda kontakt?", "W zależności od pakietu: raporty co 4/2/1 tydzień + stały kontakt w razie pytań (Essential Plus/PRO)."],
-            ["Czy mogę trenować w domu?", "Tak – dostosowuję plan do dostępnego sprzętu i czasu, przygotuję również alternatywy ćwiczeń."],
-            ["Jak wygląda pierwszy miesiąc współpracy?", "Start od audytu, plan + edukacja, cotygodniowy/2-tyg./4-tyg. raport wg pakietu, modyfikacje na bieżąco."],
-            ["Jak długo trwa współpraca?", "Minimalnie 3 miesiące, by zobaczyć pełne efekty."],
-            ["Jak płacę?", "Płatności online przez Przelewy24. Po opłaceniu dostaniesz link do pobrania e-booka."]
+            [
+    "Czy współpraca jest dla początkujących?",
+    "Tak. Na początku przeprowadzam szczegółowy wywiad i przygotowuję plan dostosowany do Twojego poziomu, doświadczenia i dostępnego sprzętu."
+  ],
+  [
+    "Jak wygląda kontakt?",
+    "W zależności od wybranego pakietu raportujesz postępy co 4, 2 lub 1 tydzień. W pakietach Essential Plus i PRO masz też stały kontakt w razie pytań."
+  ],
+  [
+    "Czy mogę trenować w domu?",
+    "Tak – plan dopasowuję do sprzętu, którym dysponujesz, oraz czasu, jakim dysponujesz. Otrzymasz też alternatywy ćwiczeń, jeśli coś okaże się niewygodne."
+  ],
+  [
+    "Jak wygląda pierwszy miesiąc współpracy?",
+    "Zaczynamy od szczegółowego wywiadu, aby poznać Twoje cele i możliwości. Następnie przygotowuję dla Ciebie indywidualny plan treningowy oraz ustalam praktyczne wskazówki dietetyczne. W trakcie pierwszego miesiąca regularnie raportujesz postępy (co tydzień, dwa lub cztery tygodnie – w zależności od pakietu), a ja na bieżąco wprowadzam potrzebne modyfikacje."
+  ],
+  [
+    "Jak długo trwa współpraca?",
+    "Rekomenduję minimum 3 miesiące, aby zobaczyć pełne i trwałe efekty – choć wielu podopiecznych zostaje ze mną dłużej, by kontynuować progres."
+  ],
+  [
+    "Jak płacę?",
+    "Płatności realizowane są online przez Przelewy24. Po opłaceniu otrzymasz link do pobrania e-booka lub potwierdzenie rozpoczęcia współpracy."
+  ]
           ].map(([q, a]) => (
             <div key={q} className="rounded-2xl border border-neutral-800 p-6 bg-neutral-900/40">
               <div className="font-semibold">{q}</div>
-              <div className="mt-1 text-neutral-300 text-sm">{a}</div>
+              <div className="mt-1 text-neutral-300 text-base">{a}</div>
             </div>
           ))}
         </div>
@@ -522,14 +619,19 @@ return (
     </div>
 
     {/* STICKY KOSZYK (desktop) */}
-    <button onClick={() => setCartOpen(true)} className="hidden md:flex fixed bottom-6 right-6 z-50 items-center gap-2 rounded-2xl px-4 py-3 bg-white text-black shadow-lg">
-      <span>Koszyk</span>
-      {cart.length > 0 && (
-        <span className="inline-flex items-center justify-center min-w-6 h-6 px-2 text-xs rounded-full bg-black text-white">
-          {cart.reduce((n, i) => n + i.qty, 0)}
-        </span>
-      )}
-    </button>
+    <button
+  onClick={() => setCartOpen(true)}
+  className="hidden md:flex fixed bottom-6 right-6 z-50 items-center gap-2 rounded-2xl p-3 bg-white text-black shadow-lg"
+  aria-label="Koszyk"
+>
+  <CartIcon className="w-6 h-6" />
+  {cart.length > 0 && (
+    <span className="inline-flex items-center justify-center min-w-6 h-6 px-2 text-xs rounded-full bg-black text-white">
+      {cart.reduce((n, i) => n + i.qty, 0)}
+    </span>
+  )}
+</button>
+
 
     {/* DRAWER KOSZYKA */}
     {cartOpen && (
