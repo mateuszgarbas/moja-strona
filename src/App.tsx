@@ -200,24 +200,18 @@ const [lastScrollY, setLastScrollY] = useState(0);
 useEffect(() => {
   const handleScroll = () => {
     if (window.innerWidth < 768) { // tylko mobile
-      const currentScroll = window.scrollY;
-
-      if (currentScroll > lastScrollY && currentScroll > 50) {
-        // przewijanie w dół i nie jesteśmy na samej górze
-        setIsVisible(false);
-      } else if (lastScrollY - currentScroll > 50) {
-        // przewijanie w górę o więcej niż 50px
-        setIsVisible(true);
+      if (window.scrollY > lastScrollY) {
+        setIsVisible(false); // przewijanie w dół
+      } else {
+        setIsVisible(true); // przewijanie w górę
       }
-
-      setLastScrollY(currentScroll);
+      setLastScrollY(window.scrollY);
     }
   };
 
   window.addEventListener("scroll", handleScroll);
   return () => window.removeEventListener("scroll", handleScroll);
 }, [lastScrollY]);
-
 
 return (
   <div className="min-h-screen bg-black text-white antialiased">
@@ -546,7 +540,7 @@ return (
         <div className="mt-8 flex justify-center">
   <a
   href="#konsultacja"
-  className="px-3 py-2 text-sm font-bold rounded-2xl text-black bg-white shadow-[0_0_15px_rgba(191,0,255,0.8)] hover:shadow-[0_0_25px_rgba(191,0,255,1)] transition-all duration-300 md:px-8 md:py-4 md:text-xl flex items-center justify-center"
+  className="px-3 py-2 text-sm font-bold rounded-2xl text-black bg-white shadow-[0_0_15px_rgba(255,255,255,0.8)] hover:shadow-[0_0_25px_rgba(255,255,255,1)] transition-all duration-300 md:px-8 md:py-4 md:text-xl flex items-center justify-center"
 >
   {/* Mobile: ikona */}
   <span className="md:hidden text-lg">📅</span>
@@ -554,7 +548,6 @@ return (
   {/* Desktop: tekst */}
   <span className="hidden md:inline">Umów konsultację</span>
 </a>
-
 
 
 </div>
