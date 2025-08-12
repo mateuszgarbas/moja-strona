@@ -566,15 +566,34 @@ return (
       <div className="mx-auto max-w-6xl px-4">
         <div className="text-center">
           <h2
-            className="text-4xl md:text-5xl font-extrabold mb-6 px-6 py-3 rounded-2xl mx-auto w-fit"
-            style={{
-              color: GOLD,
-              background: "rgba(255, 255, 255, 0.05)",
-              border: `1px solid ${GOLD}`
-            }}
-          >
-            OPINIE
-          </h2>
+  className="text-4xl md:text-5xl font-extrabold mb-6 px-6 py-3 rounded-2xl mx-auto w-fit flex items-center gap-3"
+  style={{
+    color: GOLD,
+    background: "rgba(255, 255, 255, 0.05)",
+    border: `1px solid ${GOLD}`
+  }}
+>
+  OPINIE
+  <div className="flex gap-1">
+    {[...Array(5)].map((_, i) => (
+      <svg
+        key={i}
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill={GOLD}
+        className="w-6 h-6 transition-transform transform hover:scale-125 hover:rotate-12"
+      >
+        <path
+          fillRule="evenodd"
+          d="M12 2.25c.414 0 .79.26.94.65l2.12 5.18 5.66.44c.4.03.74.28.86.65.12.37.02.78-.26 1.06l-4.24 3.82 1.28 5.5c.09.39-.09.8-.45 1.02a.94.94 0 0 1-1.05-.02L12 18.77l-4.92 3.21a.94.94 0 0 1-1.05.02c-.36-.22-.54-.63-.45-1.02l1.28-5.5-4.24-3.82a1 1 0 0 1-.26-1.06c.12-.37.46-.62.86-.65l5.66-.44 2.12-5.18c.15-.39.53-.65.94-.65z"
+          clipRule="evenodd"
+        />
+      </svg>
+    ))}
+  </div>
+</h2>
+
+
         </div>
         <div
   ref={marqueeRef}
