@@ -200,15 +200,15 @@ return (
 
          <a
   href="#konsultacja"
-  className={`${goldButtonClass} w-full text-center md:w-auto md:inline-flex md:items-center md:justify-center px-3 py-1 text-sm md:px-6 md:py-3 md:text-base`}
+  className="px-8 py-4 text-lg font-bold rounded-2xl neon-button transition-transform active:scale-[.98]"
   style={{
     backgroundColor: "#ffffff",
-    color: "#000000",
-    boxShadow: "0 0 10px rgba(255, 255, 255, 0.8)"
+    color: "#000000"
   }}
 >
   Umów konsultację
 </a>
+
 
         </div>
       </nav>
