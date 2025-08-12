@@ -228,14 +228,11 @@ return (
 
          <a
   href="#konsultacja"
-  className="px-8 py-4 text-lg font-bold rounded-2xl neon-button transition-transform active:scale-[.98]"
-  style={{
-    backgroundColor: "#ffffff",
-    color: "#000000"
-  }}
+  className="px-4 py-2 text-sm font-bold rounded-2xl text-black bg-white shadow-[0_0_15px_rgba(255,255,255,0.8)] hover:shadow-[0_0_25px_rgba(255,255,255,1)] transition-all duration-300 md:px-8 md:py-4 md:text-xl"
 >
   Umów konsultację
 </a>
+
 
 
         </div>
