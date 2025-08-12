@@ -26,7 +26,7 @@ const CartIcon = ({ className = "w-6 h-6" }) => (
 
 /** Klasy przycisków */
 const goldButtonClass =
-  "transition-transform active:scale-[.98] bg-gold hover:bg-gold-hover text-black px-6 py-3 font-semibold shadow-lg rounded-2xl";
+  "transition-transform active:scale-[.98] bg-gold hover:bg-gold-hover text-black font-semibold shadow-lg rounded-2xl";
 const whiteButtonClass =
   "transition-transform active:scale-[.98] bg-white hover:bg-neutral-200 text-black px-6 py-3 font-semibold shadow-lg rounded-2xl";
 
@@ -203,11 +203,11 @@ return (
   href="#konsultacja"
   className={`${goldButtonClass} px-4 py-2 text-sm md:px-6 md:py-3 md:text-base`}
   style={{ backgroundColor: GOLD }}
-  onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = GOLD_HOVER)}
-  onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = GOLD)}
+
 >
   Umów konsultację
 </a>
+
 
 
         </div>
