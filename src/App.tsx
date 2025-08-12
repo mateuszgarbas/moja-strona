@@ -273,23 +273,24 @@ return (
 
       {/* Licznik */}
       <div
-  className="mt-6 px-6 py-3 rounded-2xl text-lg font-semibold flex items-center justify-center text-center md:justify-start md:text-left"
+  className="mt-6 px-4 py-2 rounded-2xl text-lg font-semibold flex items-center justify-center text-center md:justify-start md:text-left"
   style={{
     backgroundColor: "#ffffff", // białe tło
     border: "1px solid #ffffff",
     color: "#000000" // czarny tekst
   }}
 >
-  Zostało{" "}
+  Pozostało{" "}
   <span
     ref={countRef}
-    className="text-2xl font-bold pulse-red"
+    className="text-2xl font-bold pulse-red mx-3"
     style={{ color: "red" }}
   >
     {placesLeft}
-  </span>{" "}
-  miejsc na prowadzenie w tym miesiącu
+  </span>
+  miejsc na współpracę w tym miesiącu
 </div>
+
 
     </div>
 
