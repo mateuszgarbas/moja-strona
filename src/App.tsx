@@ -1,6 +1,10 @@
-import { motion } from "framer-motion";
+import { motion, animate} from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import ReactCompareImage from "react-compare-image";
+
+
+// const GOLD = "#d4af37"; // jeśli już masz, to usuń ten duplikat
+
 
 /** Kolory */
 
@@ -118,6 +122,30 @@ function CountUp({ end, duration = 1.6, suffix = "+" }: { end: number; duration?
 }
 
 export default function App() {
+  const [placesLeft, setPlacesLeft] = useState(5);
+const countRef = useRef<HTMLSpanElement | null>(null);
+
+useEffect(() => {
+  const timer = setInterval(() => {
+    setPlacesLeft(prev => (prev > 0 ? prev - 1 : 0));
+  }, 75000);
+  return () => clearInterval(timer);
+}, []);
+
+useEffect(() => {
+  if (countRef.current) {
+    animate(parseInt(countRef.current.textContent || "0"), placesLeft, {
+      duration: 0.8,
+      ease: "easeOut",
+      onUpdate: latest => {
+        if (countRef.current) {
+          countRef.current.textContent = Math.round(latest).toString();
+        }
+      }
+    });
+  }
+}, [placesLeft]);
+
   const [isHovering, setIsHovering] = useState(false);
   const marqueeRef = useRef<HTMLDivElement | null>(null);
 
@@ -233,6 +261,17 @@ return (
             </a>
           </div>
         </div>
+        <div
+  className="mt-6 px-6 py-3 rounded-2xl text-lg font-semibold text-center md:text-left"
+  style={{
+    background: "rgba(255,255,255,0.05)",
+    border: `1px solid ${GOLD}`,
+    color: GOLD
+  }}
+>
+  Pozostało <span ref={countRef} className="text-2xl font-bold">{placesLeft}</span> miejsc w tym miesiącu
+</div>
+
         <div className="relative">
           <img src="/assets/trener.jpg" alt="Mateusz Garbas" className="w-full aspect-[4/5] object-cover rounded-3xl border border-neutral-700" />
         </div>
