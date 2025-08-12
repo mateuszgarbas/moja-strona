@@ -3,17 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import ReactCompareImage from "react-compare-image";
 
 /** Kolory */
-const startPlaces = 7;
-const [placesLeft, setPlacesLeft] = useState(startPlaces);
-
-useEffect(() => {
-  // tu możesz podłączyć API lub ustawić ręcznie
-  const timer = setInterval(() => {
-    setPlacesLeft(prev => (prev > 0 ? prev - 1 : 0));
-  }, 115000); // co 15 sekund ubywa jedno miejsce (tylko przykład)
-  return () => clearInterval(timer);
-}, []);
-
+const startPlaces = 5;
 const GOLD = "#d4af37";
 const CartIcon = ({ className = "w-6 h-6" }) => (
   <svg
