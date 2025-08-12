@@ -912,28 +912,6 @@ src="https://www.youtube.com/embed/kq6nOJkaReg?si=jG49M9kqEqZKHT5g"
    {/* Floating Messenger / Instagram */}
 {!cartOpen && (
   <>
-    {/* Mobile: nad stopką */}
-    <div className="flex justify-center gap-4 mt-8 md:hidden">
-      <a
-        href="https://m.me/61569722611144"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="w-14 h-14 rounded-full bg-[#ffffff1a] backdrop-blur-sm flex items-center justify-center shadow-lg border border-[#d4af37] hover:scale-110 transition-transform"
-        aria-label="Wyślij wiadomość na Messenger"
-      >
-        <img src="/assets/mess.png" alt="Messenger" className="w-10 h-10" />
-      </a>
-      <a
-        href="https://instagram.com/mateusz.garbas"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="w-14 h-14 rounded-full bg-[#ffffff1a] backdrop-blur-sm flex items-center justify-center shadow-lg border border-[#d4af37] hover:scale-110 transition-transform"
-        aria-label="Otwórz Instagram"
-      >
-        <img src="/assets/instagram.png" alt="Instagram" className="w-10 h-10" />
-      </a>
-    </div>
-
     {/* Desktop: pływające */}
     <div className="hidden md:flex fixed bottom-24 right-6 flex-col gap-3 z-50">
       <a
