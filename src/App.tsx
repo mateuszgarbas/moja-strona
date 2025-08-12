@@ -314,25 +314,27 @@ return (
   className="rounded-2xl border border-neutral-800 p-4 bg-neutral-900/40 flex flex-col justify-between h-full"
 >
 <div className="w-full aspect-[3/4] overflow-hidden rounded-xl">
-  <ReactCompareImage
-    leftImage={c.before}
-    rightImage={c.after}
-    sliderLineColor={GOLD}
-    leftImageCss={{
-  objectFit: "cover",
-  width: "100%",
-  height: "100%",
-  objectPosition: "center"
-}}
-rightImageCss={{
-  objectFit: "cover",
-  width: "100%",
-  height: "100%",
-  objectPosition: "center"
-}}
-
-  />
+  <div className="w-full h-full">
+    <ReactCompareImage
+      leftImage={c.before}
+      rightImage={c.after}
+      sliderLineColor={GOLD}
+      leftImageCss={{
+        objectFit: "cover",
+        width: "100%",
+        height: "100%",
+        objectPosition: "center"
+      }}
+      rightImageCss={{
+        objectFit: "cover",
+        width: "100%",
+        height: "100%",
+        objectPosition: "center"
+      }}
+    />
+  </div>
 </div>
+
   <div className="mt-4 text-center">
     <div className="font-semibold">{c.name}</div>
     <div className="text-neutral-300 text-base min-h-[40px]">{c.desc}</div>
