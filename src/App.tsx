@@ -194,11 +194,35 @@ useEffect(() => {
     console.log("Checkout payload (Przelewy24):", payload);
     alert("Symulacja płatności Przelewy24 — payload w konsoli.");
   };
+const [isVisible, setIsVisible] = useState(true);
+const [lastScrollY, setLastScrollY] = useState(0);
+
+useEffect(() => {
+  const handleScroll = () => {
+    if (window.innerWidth < 768) { // tylko mobile
+      if (window.scrollY > lastScrollY) {
+        setIsVisible(false); // przewijanie w dół
+      } else {
+        setIsVisible(true); // przewijanie w górę
+      }
+      setLastScrollY(window.scrollY);
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, [lastScrollY]);
 
 return (
   <div className="min-h-screen bg-black text-white antialiased">
   {/* NAV */}
-  <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-black/70 border-b border-neutral-800">
+  
+<header
+  className={`sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-black/70 border-b border-neutral-800 shadow-md md:shadow-none transition-transform duration-300 md:translate-y-0 ${
+    isVisible ? "translate-y-0" : "-translate-y-full"
+  }`}
+>
+
     <nav className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
       <a href="#top" className="flex items-center gap-2 font-semibold text-lg">
         <img src="/assets/favicon.png" alt="Logo" className="h-12 w-12 rounded-full border border-[#d4af37]" />
