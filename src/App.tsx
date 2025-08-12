@@ -362,10 +362,10 @@ return (
         </div>
         <div className="mt-8 grid md:grid-cols-4 gap-6">
           {[
-            { t: "Konsultacja wstępna", d: "Poznajemy Twoje cele i możliwości." },
-            { t: "Audyt i plan", d: "Analiza nawyków, dobór ćwiczeń i strategii." },
-            { t: "Realizacja", d: "Wdrażasz plan, uczysz się techniki i nawyków." },
-            { t: "Monitoring", d: "Raporty wg pakietu i korekty planu." }
+            { t: "Konsultacja wstępna", d: "PRozmowa o Twoich celach, możliwościach i dotychczasowych doświadczeniach." },
+            { t: "Analiza i plan", d: "ASprawdzamy Twoje nawyki, poziom wytrenowania i układamy plan dopasowany do Ciebie." },
+            { t: "Realizacja z moim wsparciem", d: "Wdrażasz plan krok po kroku, uczysz się techniki i dobrych nawyków." },
+            { t: "Stały monitoring i korekty", d: "Regularne raporty i modyfikacje planu, by efekty były maksymalne." }
           ].map((s, idx) => (
             <div key={idx} className="rounded-2xl border border-neutral-800 p-6 bg-neutral-900/40 text-center">
               <div className="text-5xl font-bold mb-2" style={{ color: GOLD }}>{idx + 1}</div>
