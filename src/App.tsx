@@ -830,11 +830,6 @@ src="https://www.youtube.com/embed/kq6nOJkaReg?si=jG49M9kqEqZKHT5g"
             </div>
           </div>
 
-          {/* Opis */}
-          <div className="mt-4 text-center">
-            <div className="font-semibold">{c.name}</div>
-            <div className="text-neutral-300 text-base min-h-[40px]">{c.desc}</div>
-          </div>
         </div>
       ))}
     </div>
