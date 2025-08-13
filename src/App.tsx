@@ -955,12 +955,13 @@ src="https://www.youtube.com/embed/kq6nOJkaReg?si=jG49M9kqEqZKHT5g"
               <div>{formatPLN(subtotal)}</div>
             </div>
             <button
-              onClick={checkout}
-              disabled={cart.length === 0}
-              className={`${goldButtonClass} w-full mt-4 disabled:opacity-50 disabled:cursor-not-allowed`}
-            >
-              Przejdź do płatności (Przelewy24)
-            </button>
+  onClick={checkout}
+  disabled={cart.length === 0}
+  className={`${goldButtonClass} w-full mt-4 disabled:opacity-50 disabled:cursor-not-allowed`}
+>
+  Przejdź do płatności (Stripe)
+</button>
+
             <div className="mt-4 flex gap-3 items-center justify-center opacity-80">
               <img src="/assets/przelewy24.png" alt="Przelewy24" className="h-6" />
               <img src="/assets/visa.png" alt="Visa" className="h-6" />
