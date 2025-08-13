@@ -774,6 +774,32 @@ src="https://www.youtube.com/embed/kq6nOJkaReg?si=jG49M9kqEqZKHT5g"
           key={idx}
           className="min-w-[250px] rounded-2xl border border-neutral-800 p-4 bg-neutral-900/40 flex flex-col justify-between"
         >
+         {/* GALERIA PRZEMIAN */}
+<section id="galeria" className="py-16 border-t border-neutral-800">
+  <div className="mx-auto max-w-6xl px-4">
+    <h2
+      className="text-4xl md:text-5xl font-extrabold mb-10 text-center px-6 py-3 rounded-2xl w-fit mx-auto"
+      style={{
+        color: GOLD,
+        background: "rgba(255, 255, 255, 0.05)",
+        border: `1px solid ${GOLD}`
+      }}
+    >
+      Galeria przemian
+    </h2>
+
+    <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide">
+      {[
+        { before: "/assets/przed1.png", after: "/assets/po1.png", name: "Kasia", desc: "3 miesiące – -8 kg, poprawa siły i wytrzymałości." },
+        { before: "/assets/przed2.png", after: "/assets/po2.png", name: "Marek", desc: "5 miesięcy – +5 kg masy mięśniowej." },
+        { before: "/assets/przed3.png", after: "/assets/po3.png", name: "Anna", desc: "-6 kg, wyrzeźbienie sylwetki." },
+        { before: "/assets/przed4.png", after: "/assets/po4.png", name: "Paweł", desc: "+4 kg masy mięśniowej." },
+        { before: "/assets/przed5.png", after: "/assets/po5.png", name: "Ola", desc: "-10 kg i poprawa kondycji." }
+      ].map((c, idx) => (
+        <div
+          key={idx}
+          className="min-w-[250px] rounded-2xl border border-neutral-800 p-4 bg-neutral-900/40 flex flex-col justify-between"
+        >
           {/* Dwa zdjęcia obok siebie */}
           <div className="flex gap-2">
             <div className="relative w-1/2 aspect-[3/4]">
@@ -782,9 +808,12 @@ src="https://www.youtube.com/embed/kq6nOJkaReg?si=jG49M9kqEqZKHT5g"
                 alt={`${c.name} przed`}
                 className="w-full h-full object-cover rounded-lg"
               />
-              <span className="absolute top-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded">
-                Przed
-              </span>
+              <span
+  className="absolute bottom-0 left-0 w-full bg-black/60 text-center text-xs text-white py-1 rounded-b-lg"
+>
+  Przed
+</span>
+
             </div>
             <div className="relative w-1/2 aspect-[3/4]">
               <img
@@ -792,11 +821,26 @@ src="https://www.youtube.com/embed/kq6nOJkaReg?si=jG49M9kqEqZKHT5g"
                 alt={`${c.name} po`}
                 className="w-full h-full object-cover rounded-lg"
               />
-              <span className="absolute top-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded">
-                Po
-              </span>
+              <span
+  className="absolute bottom-0 left-0 w-full bg-black/60 text-center text-xs text-white py-1 rounded-b-lg"
+>
+  Po
+</span>
+
             </div>
           </div>
+
+          {/* Opis */}
+          <div className="mt-4 text-center">
+            <div className="font-semibold">{c.name}</div>
+            <div className="text-neutral-300 text-base min-h-[40px]">{c.desc}</div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
 
           {/* Opis */}
           <div className="mt-4 text-center">
