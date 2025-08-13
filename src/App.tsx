@@ -762,41 +762,47 @@ src="https://www.youtube.com/embed/kq6nOJkaReg?si=jG49M9kqEqZKHT5g"
       Galeria przemian
     </h2>
 
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+    <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide">
       {[
-        { before: "/assets/przed1.png", after: "/assets/po1.png" },
-        { before: "/assets/przed2.png", after: "/assets/po2.png" },
-        { before: "/assets/przed3.png", after: "/assets/po3.png" },
-        { before: "/assets/przed4.png", after: "/assets/po4.png" },
-        { before: "/assets/przed5.png", after: "/assets/po5.png" },
-        { before: "/assets/przed6.png", after: "/assets/po6.png" },
-        { before: "/assets/przed7.png", after: "/assets/po7.png" },
-        { before: "/assets/przed8.png", after: "/assets/po8.png" },
-        { before: "/assets/przed9.png", after: "/assets/po9.png" },
-        { before: "/assets/przed10.png", after: "/assets/po10.png" }
+        { before: "/assets/przed1.png", after: "/assets/po1.png", name: "Kasia", desc: "3 miesiące – -8 kg, poprawa siły i wytrzymałości." },
+        { before: "/assets/przed2.png", after: "/assets/po2.png", name: "Marek", desc: "5 miesięcy – +5 kg masy mięśniowej." },
+        { before: "/assets/przed3.png", after: "/assets/po3.png", name: "Anna", desc: "-6 kg, wyrzeźbienie sylwetki." },
+        { before: "/assets/przed4.png", after: "/assets/po4.png", name: "Paweł", desc: "+4 kg masy mięśniowej." },
+        { before: "/assets/przed5.png", after: "/assets/po5.png", name: "Ola", desc: "-10 kg i poprawa kondycji." }
       ].map((c, idx) => (
         <div
           key={idx}
-          className="overflow-hidden rounded-xl border border-[#d4af37] bg-neutral-900/40 hover:scale-[1.02] transition-transform"
+          className="min-w-[250px] rounded-2xl border border-neutral-800 p-4 bg-neutral-900/40 flex flex-col justify-between"
         >
-          <ReactCompareImage
-            leftImage={c.before}
-            rightImage={c.after}
-            sliderLineColor={GOLD}
-            leftImageCss={{
-              objectFit: "cover",
-              width: "100%",
-              height: "100%"
-            }}
-            rightImageCss={{
-              objectFit: "cover",
-              width: "100%",
-              height: "100%"
-            }}
-            handle={
-              <div className="w-1 bg-[#d4af37]" />
-            }
-          />
+          {/* Dwa zdjęcia obok siebie */}
+          <div className="flex gap-2">
+            <div className="relative w-1/2 aspect-[3/4]">
+              <img
+                src={c.before}
+                alt={`${c.name} przed`}
+                className="w-full h-full object-cover rounded-lg"
+              />
+              <span className="absolute top-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded">
+                Przed
+              </span>
+            </div>
+            <div className="relative w-1/2 aspect-[3/4]">
+              <img
+                src={c.after}
+                alt={`${c.name} po`}
+                className="w-full h-full object-cover rounded-lg"
+              />
+              <span className="absolute top-2 right-2 bg-black/60 text-white text-xs px-2 py-1 rounded">
+                Po
+              </span>
+            </div>
+          </div>
+
+          {/* Opis */}
+          <div className="mt-4 text-center">
+            <div className="font-semibold">{c.name}</div>
+            <div className="text-neutral-300 text-base min-h-[40px]">{c.desc}</div>
+          </div>
         </div>
       ))}
     </div>
