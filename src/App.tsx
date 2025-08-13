@@ -748,6 +748,61 @@ src="https://www.youtube.com/embed/kq6nOJkaReg?si=jG49M9kqEqZKHT5g"
   </div>
 </div>
 
+{/* GALERIA PRZEMIAN */}
+<section id="galeria" className="py-16 border-t border-neutral-800">
+  <div className="mx-auto max-w-6xl px-4">
+    <h2
+      className="text-4xl md:text-5xl font-extrabold mb-10 text-center px-6 py-3 rounded-2xl w-fit mx-auto"
+      style={{
+        color: GOLD,
+        background: "rgba(255, 255, 255, 0.05)",
+        border: `1px solid ${GOLD}`
+      }}
+    >
+      Galeria przemian
+    </h2>
+
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+      {[
+        { before: "/assets/przed1.png", after: "/assets/po1.png" },
+        { before: "/assets/przed2.png", after: "/assets/po2.png" },
+        { before: "/assets/przed3.png", after: "/assets/po3.png" },
+        { before: "/assets/przed4.png", after: "/assets/po4.png" },
+        { before: "/assets/przed5.png", after: "/assets/po5.png" },
+        { before: "/assets/przed6.png", after: "/assets/po6.png" },
+        { before: "/assets/przed7.png", after: "/assets/po7.png" },
+        { before: "/assets/przed8.png", after: "/assets/po8.png" },
+        { before: "/assets/przed9.png", after: "/assets/po9.png" },
+        { before: "/assets/przed10.png", after: "/assets/po10.png" }
+      ].map((c, idx) => (
+        <div
+          key={idx}
+          className="overflow-hidden rounded-xl border border-[#d4af37] bg-neutral-900/40 hover:scale-[1.02] transition-transform"
+        >
+          <ReactCompareImage
+            leftImage={c.before}
+            rightImage={c.after}
+            sliderLineColor={GOLD}
+            leftImageCss={{
+              objectFit: "cover",
+              width: "100%",
+              height: "100%"
+            }}
+            rightImageCss={{
+              objectFit: "cover",
+              width: "100%",
+              height: "100%"
+            }}
+            handle={
+              <div className="w-1 bg-[#d4af37]" />
+            }
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       </div>
     </section>
