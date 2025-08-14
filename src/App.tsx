@@ -176,31 +176,26 @@ return (
 >
 
 
-    <nav className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-      <a href="#top" className="flex items-center gap-2 font-semibold text-lg">
-        <img src="/assets/favicon.png" alt="Logo" className="h-12 w-12 rounded-full border border-[#d4af37]" />
-        Mateusz Garbas
-      </a>
+  <nav className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+  {/* Logo po lewej */}
+  <a href="#top" className="flex items-center gap-2 font-semibold text-lg">
+    <img src="/assets/favicon.png" alt="Logo" className="h-12 w-12 rounded-full border border-[#d4af37]" />
+    Mateusz Garbas
+  </a>
 
-        <div className="hidden md:flex items-center gap-8 text-lg font-sans tracking-wide font-semibold">
-          <a href="#oferta" className="transition-colors duration-200 hover:text-[#d4af37]">OFERTA</a>
-          <a href="#ebooki" className="transition-colors duration-200 hover:text-[#d4af37]">E-BOOKI</a>
-          <a href="#opinie" className="transition-colors duration-200 hover:text-[#d4af37]">OPINIE</a>
-          <a href="#faq" className="transition-colors duration-200 hover:text-[#d4af37]">FAQ</a>
-        </div>
+  {/* Środkowa sekcja z linkami i przyciskiem */}
+  <div className="hidden md:flex items-center gap-8 text-lg font-sans tracking-wide font-semibold mx-auto translate-x-[-40px]">
+  <a href="#oferta" className="transition-colors duration-200 hover:text-[#d4af37]">OFERTA</a>
+  <a href="#opinie" className="transition-colors duration-200 hover:text-[#d4af37]">OPINIE</a>
+  <a href="#faq" className="transition-colors duration-200 hover:text-[#d4af37]">FAQ</a>
+  <a
+    href="#konsultacja"
+    className="px-4 py-2 text-sm font-bold rounded-2xl text-black bg-white shadow-[0_0_15px_rgba(255,255,255,0.8)] hover:shadow-[0_0_25px_rgba(255,255,255,1)] transition-all duration-300 md:px-8 md:py-4 md:text-xl"
+  >
+    Umów konsultację
+  </a>
+</div>
 
-        <div className="flex items-center gap-3">
-
-         <a
-  href="#konsultacja"
-  className="px-4 py-2 text-sm font-bold rounded-2xl text-black bg-white shadow-[0_0_15px_rgba(255,255,255,0.8)] hover:shadow-[0_0_25px_rgba(255,255,255,1)] transition-all duration-300 md:px-8 md:py-4 md:text-xl"
->
-  Umów konsultację
-</a>
-
-
-
-        </div>
       </nav>
     </header>
 
