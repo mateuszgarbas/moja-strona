@@ -265,10 +265,11 @@ return (
     {/* Prawa kolumna (obrazek) */}
     <div className="relative">
       <img
-        src="/assets/trener1.jpg"
-        alt="Mateusz Garbas"
-        className="w-full aspect-[4/5] object-cover rounded-3xl border border-neutral-700"
-      />
+  src="/assets/trener1.jpg"
+  alt="Mateusz Garbas"
+  className="w-full aspect-[4/5] object-cover rounded-3xl border border-neutral-700"
+  style={{ transform: "scaleX(-1)" }}
+/>
     </div>
   </div>
 </section>
