@@ -9,27 +9,9 @@ import ReactCompareImage from "react-compare-image";
 /** Kolory */
 
 const GOLD = "#d4af37";
-const CartIcon = ({ className = "w-6 h-6" }) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth={1.8}
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    className={className}
-  >
-    <circle cx="9" cy="21" r="1" />
-    <circle cx="20" cy="21" r="1" />
-    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-  </svg>
-);
 
 
 /** Klasy przycisków */
-const goldButtonClass =
-  "transition-transform active:scale-[.98] bg-gold hover:bg-gold-hover text-black font-semibold shadow-lg rounded-2xl";
 const whiteButtonClass =
   "transition-transform active:scale-[.98] bg-white hover:bg-neutral-200 text-black px-6 py-3 font-semibold shadow-lg rounded-2xl";
 
@@ -55,17 +37,6 @@ const PACKAGES = [
   { title: "Pakiet Essential Plus", features: ["Raporty co 2 tygodnie", "Pełne prowadzenie treningowe", "Monitorowanie diety", "20% zniżki na e-booki", "Analiza psychologiczna stylu motywacji", "Kontakt w razie pytań"] },
   { title: "Pakiet PRO", features: ["Raporty co tydzień", "Pełne prowadzenie treningowe", "Monitorowanie diety", "E-book gratis", "Analiza psychologiczna stylu motywacji", "Priorytetowy kontakt"] }
 ];
-
-/** Produkty (e-booki) */
-const PRODUCTS = [
-  { id: 1, title: "7 mitów o hipertrofii mięśniowej, które blokują Twój progres", desc: "...", priceCents: 8900, image: "/assets/ebook1.png" },
-  { id: 2, title: "Jak jeść smacznie, zdrowo i skutecznie – bez restrykcyjnych diet", desc: "...", priceCents: 8900, image: "/assets/ebook2.png" }
-];
-
-/** Utils */
-function formatPLN(cents: number): string {
-  return new Intl.NumberFormat("pl-PL", { style: "currency", currency: "PLN" }).format(cents / 100);
-}
 
 /** Hook: sprawdzanie czy element jest w widoku */
 function useInView(ref: React.RefObject<HTMLElement | null>, rootMargin = "0px") {
@@ -123,7 +94,8 @@ function CountUp({ end, duration = 1.6, suffix = "+" }: { end: number; duration?
 
 export default function App() {
   const [placesLeft, setPlacesLeft] = useState(7);
-const countRef = useRef<HTMLSpanElement | null>(null);
+  const countRef = useRef<HTMLSpanElement | null>(null);
+  const [cartOpen] = useState(false);
 
 useEffect(() => {
   const timer = setInterval(() => {
@@ -146,13 +118,12 @@ useEffect(() => {
   }
 }, [placesLeft]);
 
+
+
+
   const [isHovering, setIsHovering] = useState(false);
   const marqueeRef = useRef<HTMLDivElement | null>(null);
-
-  type CartItem = { id: number; title: string; priceCents: number; qty: number };
-  const [cartOpen, setCartOpen] = useState(false);
-  const [cart, setCart] = useState<CartItem[]>([]);
-
+  
   useEffect(() => {
     let raf = 0;
     const speed = 0.35;
@@ -169,31 +140,7 @@ useEffect(() => {
     return () => cancelAnimationFrame(raf);
   }, [isHovering]);
 
-  const addToCart = (productId: number) => {
-    const p = PRODUCTS.find((x) => x.id === productId);
-    if (!p) return;
-    setCart((prev) => {
-      const idx = prev.findIndex((i) => i.id === p.id);
-      if (idx > -1) {
-        const next = [...prev];
-        next[idx] = { ...next[idx], qty: next[idx].qty + 1 };
-        return next;
-      }
-      return [...prev, { id: p.id, title: p.title, priceCents: p.priceCents, qty: 1 }];
-    });
-    setCartOpen(true);
-  };
 
-  const inc = (id: number) => setCart((prev) => prev.map((i) => (i.id === id ? { ...i, qty: i.qty + 1 } : i)));
-  const dec = (id: number) => setCart((prev) => prev.flatMap((i) => (i.id === id ? (i.qty > 1 ? [{ ...i, qty: i.qty - 1 }] : []) : [i])));
-  const removeItem = (id: number) => setCart((prev) => prev.filter((i) => i.id !== id));
-  const subtotal = cart.reduce((sum, i) => sum + i.priceCents * i.qty, 0);
-
-  const checkout = () => {
-    const payload = { items: cart.map((i) => ({ id: i.id, qty: i.qty })), amountCents: subtotal, method: "przelewy24" };
-    console.log("Checkout payload (Przelewy24):", payload);
-    alert("Symulacja płatności Przelewy24 — payload w konsoli.");
-  };
 const [isVisible, setIsVisible] = useState(true);
 const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -243,18 +190,6 @@ return (
         </div>
 
         <div className="flex items-center gap-3">
-          <button
-  onClick={() => setCartOpen(true)}
-  className="relative rounded-2xl border border-neutral-700 p-2 hover:border-[#d4af37]"
-  aria-label="Koszyk"
->
-  <CartIcon className="w-6 h-6" />
-  {cart.length > 0 && (
-    <span className="absolute -top-2 -right-2 text-xs bg-white text-black rounded-full px-2 py-0.5">
-      {cart.reduce((n, i) => n + i.qty, 0)}
-    </span>
-  )}
-</button>
 
          <a
   href="#konsultacja"
@@ -637,8 +572,8 @@ src="https://www.youtube.com/embed/kq6nOJkaReg?si=jG49M9kqEqZKHT5g"
       </div>
     </section>
 
-    {/* E-BOOKI */}
-    <section id="ebooki" className="py-16">
+   {/*
+<section id="ebooki" className="py-16">
   <div className="mx-auto max-w-4xl px-4">
 
         <div className="text-center">
@@ -687,6 +622,8 @@ src="https://www.youtube.com/embed/kq6nOJkaReg?si=jG49M9kqEqZKHT5g"
         </div>
       </div>
     </section>
+*/}
+
 
     {/* OPINIE */}
     <section id="opinie" className="py-16 border-t border-neutral-800">
@@ -909,69 +846,6 @@ src="https://www.youtube.com/embed/kq6nOJkaReg?si=jG49M9kqEqZKHT5g"
       </div>
     </footer>
     {/* STICKY KOSZYK (desktop) */}
-    <button
-  onClick={() => setCartOpen(true)}
-  className="hidden md:flex fixed bottom-6 right-6 z-50 items-center gap-2 rounded-2xl p-3 bg-white text-black shadow-lg"
-  aria-label="Koszyk"
->
-  <CartIcon className="w-6 h-6" />
-  {cart.length > 0 && (
-    <span className="inline-flex items-center justify-center min-w-6 h-6 px-2 text-xs rounded-full bg-black text-white">
-      {cart.reduce((n, i) => n + i.qty, 0)}
-    </span>
-  )}
-</button>
-
-
-    {/* DRAWER KOSZYKA */}
-    {cartOpen && (
-      <div className="fixed inset-0 z-50">
-        <div className="absolute inset-0 bg-black/60" onClick={() => setCartOpen(false)} />
-        <aside className="absolute right-0 top-0 h-full w-full sm:w-[420px] bg-neutral-950 border-l border-neutral-800 p-5 flex flex-col">
-          <div className="flex items-center justify-between">
-            <h3 className="text-xl font-semibold">Twój koszyk</h3>
-            <button onClick={() => setCartOpen(false)} className="text-neutral-400 hover:text-white">Zamknij</button>
-          </div>
-          <div className="mt-4 space-y-4 overflow-auto">
-            {cart.length === 0 && <div className="text-neutral-400">Koszyk jest pusty</div>}
-            {cart.map((i) => (
-              <div key={i.id} className="flex items-start justify-between gap-3 rounded-xl border border-neutral-800 p-4">
-                <div className="text-sm">
-                  <div className="font-medium">{i.title}</div>
-                  <div className="text-neutral-400 mt-1">{formatPLN(i.priceCents)} × {i.qty}</div>
-                  <div className="text-neutral-200 mt-1">Suma: {formatPLN(i.priceCents * i.qty)}</div>
-                </div>
-                <div className="flex items-center gap-2">
-                  <button onClick={() => dec(i.id)} className="px-2 py-1 rounded border border-neutral-700">−</button>
-                  <button onClick={() => inc(i.id)} className="px-2 py-1 rounded border border-neutral-700">+</button>
-                  <button onClick={() => removeItem(i.id)} className="px-2 py-1 rounded border border-red-700 text-red-400">Usuń</button>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="mt-auto pt-4 border-t border-neutral-800">
-            <div className="flex items-center justify-between text-lg font-semibold">
-              <div>Razem</div>
-              <div>{formatPLN(subtotal)}</div>
-            </div>
-            <button
-  onClick={checkout}
-  disabled={cart.length === 0}
-  className={`${goldButtonClass} w-full mt-4 disabled:opacity-50 disabled:cursor-not-allowed`}
->
-  Przejdź do płatności (Stripe)
-</button>
-
-            <div className="mt-4 flex gap-3 items-center justify-center opacity-80">
-              <img src="/assets/przelewy24.png" alt="Przelewy24" className="h-6" />
-              <img src="/assets/visa.png" alt="Visa" className="h-6" />
-              <img src="/assets/mastercard.png" alt="Mastercard" className="h-6" />
-            </div>
-          </div>
-        </aside>
-      </div>
-    )}
-
    {/* Floating Messenger / Instagram */}
 {!cartOpen && (
   <>
