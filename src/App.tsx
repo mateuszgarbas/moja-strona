@@ -226,47 +226,45 @@ return (
       {/* Przyciski */}
       <div className="mt-6 flex gap-4 flex-wrap justify-center md:justify-start">
         <a
-  href="#konsultacja"
-  className="text-xl px-8 py-4 font-bold rounded-2xl text-black"
-  style={{
-    backgroundColor: "#d4af37", // złote tło
-    boxShadow: "0 0 15px rgba(212, 175, 55, 0.8)",
-    transition: "all 0.3s ease"
-  }}
-  onMouseEnter={(e) => e.currentTarget.style.boxShadow = "0 0 25px rgba(212, 175, 55, 1)"}
-  onMouseLeave={(e) => e.currentTarget.style.boxShadow = "0 0 15px rgba(212, 175, 55, 0.8)"}
->
-  Umów konsultację
-</a>
-
-        <a href="#ebooki" className="rounded-2xl border border-neutral-700 px-8 py-4 text-xl font-bold hover:border-[#d4af37]">
-          Zobacz e-booki  
+          href="#konsultacja"
+          className="text-xl px-8 py-4 font-bold rounded-2xl text-black"
+          style={{
+            backgroundColor: "#d4af37", // złote tło
+            boxShadow: "0 0 15px rgba(212, 175, 55, 0.8)",
+            transition: "all 0.3s ease"
+          }}
+          onMouseEnter={(e) =>
+            (e.currentTarget.style.boxShadow =
+              "0 0 25px rgba(212, 175, 55, 1)")
+          }
+          onMouseLeave={(e) =>
+            (e.currentTarget.style.boxShadow =
+              "0 0 15px rgba(212, 175, 55, 0.8)")
+          }
+        >
+          Umów konsultację
         </a>
       </div>
 
       {/* Licznik */}
       <div
-  className="mt-6 inline-flex items-center justify-center px-4 py-2 rounded-2xl text-lg font-semibold mx-auto text-center"
-  style={{
-    backgroundColor: "#ffffff", // białe tło
-    border: "1px solid #ffffff",
-    color: "#000000" // czarny tekst
-  }}
->
-  Pozostało
-  <span
-    ref={countRef}
-    className="text-2xl font-bold pulse-red mx-3"
-    style={{ color: "red" }}
-  >
-    {placesLeft}
-  </span>
-  miejsc w tym miesiącu
-</div>
-
-
-
-
+        className="mt-6 inline-flex items-center justify-center px-4 py-2 rounded-2xl text-lg font-semibold mx-auto text-center"
+        style={{
+          backgroundColor: "#ffffff", // białe tło
+          border: "1px solid #ffffff",
+          color: "#000000" // czarny tekst
+        }}
+      >
+        Pozostało
+        <span
+          ref={countRef}
+          className="text-2xl font-bold pulse-red mx-3"
+          style={{ color: "red" }}
+        >
+          {placesLeft}
+        </span>
+        miejsc w tym miesiącu
+      </div>
     </div>
 
     {/* Prawa kolumna (obrazek) */}
@@ -277,7 +275,6 @@ return (
         className="w-full aspect-[4/5] object-cover rounded-3xl border border-neutral-700"
       />
     </div>
-
   </div>
 </section>
 
@@ -779,8 +776,7 @@ src="https://www.youtube.com/embed/kq6nOJkaReg?si=jG49M9kqEqZKHT5g"
   ],
   [
     "Jak płacę?",
-    "Płatności realizowane są online przez Przelewy24. Po opłaceniu otrzymasz link do pobrania e-booka lub potwierdzenie rozpoczęcia współpracy."
-  ]
+"Płatności ustalane indywidualnie podczas konsultacji."  ]
           ].map(([q, a]) => (
             <div key={q} className="rounded-2xl border border-neutral-800 p-6 bg-neutral-900/40">
               <div className="font-semibold">{q}</div>
