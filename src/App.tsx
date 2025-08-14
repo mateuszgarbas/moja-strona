@@ -401,8 +401,8 @@ return (
         </div>
         <div className="mt-8 grid md:grid-cols-4 gap-6">
           {[
-            { t: "Konsultacja wstępna", d: "PRozmowa o Twoich celach, możliwościach i dotychczasowych doświadczeniach." },
-            { t: "Analiza i plan", d: "ASprawdzamy Twoje nawyki, poziom wytrenowania i układamy plan dopasowany do Ciebie." },
+            { t: "Konsultacja wstępna", d: "Rozmowa o Twoich celach, możliwościach i dotychczasowych doświadczeniach." },
+            { t: "Analiza i plan", d: "Sprawdzamy Twoje nawyki, poziom wytrenowania i układamy plan dopasowany do Ciebie." },
             { t: "Realizacja z moim wsparciem", d: "Wdrażasz plan krok po kroku, uczysz się techniki i dobrych nawyków." },
             { t: "Stały monitoring i korekty", d: "Regularne raporty i modyfikacje planu, by efekty były maksymalne." }
           ].map((s, idx) => (
@@ -808,27 +808,7 @@ src="https://www.youtube.com/embed/kq6nOJkaReg?si=jG49M9kqEqZKHT5g"
   </a>
 </div>
 
-{/* Desktop: pływające po prawej */}
-<div className="hidden md:flex fixed bottom-24 right-6 flex-col gap-3 z-50">
-  <a
-    href="https://m.me/61569722611144"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="w-12 h-12 rounded-full bg-[#ffffff1a] backdrop-blur-sm flex items-center justify-center shadow-lg border border-[#d4af37] hover:scale-110 transition-transform"
-    aria-label="Wyślij wiadomość na Messenger"
-  >
-    <img src="/assets/mess.png" alt="Messenger" className="w-8 h-8" />
-  </a>
-  <a
-    href="https://instagram.com/mateusz.garbas"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="w-12 h-12 rounded-full bg-[#ffffff1a] backdrop-blur-sm flex items-center justify-center shadow-lg border border-[#d4af37] hover:scale-110 transition-transform"
-    aria-label="Otwórz Instagram"
-  >
-    <img src="/assets/instagram.png" alt="Instagram" className="w-8 h-8" />
-  </a>
-</div>
+
 
     {/* STOPKA */}
     <footer className="py-10 border-t border-neutral-800 text-sm">
@@ -851,7 +831,7 @@ src="https://www.youtube.com/embed/kq6nOJkaReg?si=jG49M9kqEqZKHT5g"
         href="https://m.me/61569722611144"
         target="_blank"
         rel="noopener noreferrer"
-        className="w-12 h-12 rounded-full bg-[#ffffff1a] backdrop-blur-sm flex items-center justify-center shadow-lg border border-[#d4af37] hover:scale-110 transition-transform"
+        className="w-10 h-10 rounded-full bg-[#ffffff] backdrop-blur-sm flex items-center justify-center shadow-lg border border-[#d4af37] hover:scale-110 transition-transform"
         aria-label="Wyślij wiadomość na Messenger"
       >
         <img src="/assets/mess.png" alt="Messenger" className="w-8 h-8" />
@@ -860,7 +840,7 @@ src="https://www.youtube.com/embed/kq6nOJkaReg?si=jG49M9kqEqZKHT5g"
         href="https://instagram.com/mateusz.garbas"
         target="_blank"
         rel="noopener noreferrer"
-        className="w-12 h-12 rounded-full bg-[#ffffff1a] backdrop-blur-sm flex items-center justify-center shadow-lg border border-[#d4af37] hover:scale-110 transition-transform"
+        className="w-10 h-10 rounded-full bg-[#ffffff] backdrop-blur-sm flex items-center justify-center shadow-lg border border-[#d4af37] hover:scale-110 transition-transform"
         aria-label="Otwórz Instagram"
       >
         <img src="/assets/instagram.png" alt="Instagram" className="w-8 h-8" />
