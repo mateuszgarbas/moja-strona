@@ -112,7 +112,7 @@ export default function App() {
     }
   }, [placesLeft]);
 
-  const [isHovering, setIsHovering] = useState(false);
+const [isHovering] = useState(false);
   const marqueeRef = useRef<HTMLDivElement | null>(null);
   
   useEffect(() => {
