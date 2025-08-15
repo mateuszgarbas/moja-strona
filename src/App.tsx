@@ -178,10 +178,16 @@ return (
 
   <nav className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
   {/* Logo po lewej */}
-  <a href="#top" className="flex items-center gap-2 font-semibold text-lg">
-    <img src="/assets/favicon.png" alt="Logo" className="h-12 w-12 rounded-full border border-[#d4af37]" />
-    Mateusz Garbas
-  </a>
+<a href="#top" className="flex items-center gap-2 font-semibold text-lg">
+  <img
+    src="/assets/favicon.webp"
+    alt="Logo"
+    className="h-12 w-12 rounded-full border border-[#d4af37]"
+    loading="lazy"
+  />
+  Mateusz Garbas
+</a>
+
 
   {/* Środkowa sekcja z linkami i przyciskiem */}
   <div className="hidden md:flex items-center gap-8 text-lg font-sans tracking-wide font-semibold mx-auto translate-x-[-40px]">
@@ -263,14 +269,21 @@ return (
     </div>
 
     {/* Prawa kolumna (obrazek) */}
-    <div className="relative">
+<div className="relative">
+  <picture>
+    <source srcSet="/assets/trener1.webp" type="image/webp" />
       <img
-  src="/assets/trener1.jpg"
-  alt="Mateusz Garbas"
-  className="w-full aspect-[4/5] object-cover rounded-3xl border border-neutral-700"
-  style={{ transform: "scaleX(-1)" }}
-/>
-    </div>
+      src="/assets/trener1.jpg"
+      alt="Mateusz Garbas"
+      loading="lazy"
+      decoding="async"
+      fetchPriority="high"
+      className="w-full aspect-[4/5] object-cover rounded-3xl border border-neutral-700"
+      style={{ transform: "scaleX(-1)" }}
+    />
+  </picture>
+</div>
+
   </div>
 </section>
 
@@ -332,14 +345,14 @@ return (
     <div className="text-lg grid md:grid-cols-2 gap-8">
       {[
         {
-          before: "/assets/przed2.png",
-          after: "/assets/po2.png",
+          before: "/assets/przed2.webp",
+          after: "/assets/po2.webp",
           name: "Kasia",
           desc: "3 miesiące – -8 kg, poprawa siły i wytrzymałości."
         },
         {
-          before: "/assets/przed1.png",
-          after: "/assets/po1.png",
+          before: "/assets/przed1.webp",
+          after: "/assets/po1.webp",
           name: "Marek",
           desc: "5 miesięcy – +5 kg masy mięśniowej."
         }
@@ -677,7 +690,6 @@ src="https://www.youtube.com/embed/kq6nOJkaReg?si=jG49M9kqEqZKHT5g"
     ))}
   </div>
 </div>
-
 {/* GALERIA PRZEMIAN */}
 <section id="galeria" className="py-16 border-t border-neutral-800">
   <div className="mx-auto max-w-6xl px-4">
@@ -695,11 +707,11 @@ src="https://www.youtube.com/embed/kq6nOJkaReg?si=jG49M9kqEqZKHT5g"
     {/* Karuzela pozioma */}
     <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide">
       {[
-        { before: "/assets/przed2.png", after: "/assets/po2.png", name: "Kasia", desc: "3 miesiące – -8 kg, poprawa siły i wytrzymałości." },
-        { before: "/assets/przed1.png", after: "/assets/po1.png", name: "Marek", desc: "5 miesięcy – +5 kg masy mięśniowej." },
-        { before: "/assets/przed3.png", after: "/assets/po3.png", name: "Anna", desc: "-6 kg, wyrzeźbienie sylwetki." },
-        { before: "/assets/przed4.png", after: "/assets/po4.png", name: "Paweł", desc: "+4 kg masy mięśniowej." },
-        { before: "/assets/przed5.png", after: "/assets/po5.png", name: "Ola", desc: "-10 kg i poprawa kondycji." }
+        { before: "/assets/przed2.webp", after: "/assets/po2.webp", name: "Kasia", desc: "3 miesiące – -8 kg, poprawa siły i wytrzymałości." },
+        { before: "/assets/przed1.webp", after: "/assets/po1.webp", name: "Marek", desc: "5 miesięcy – +5 kg masy mięśniowej." },
+        { before: "/assets/przed3.webp", after: "/assets/po3.webp", name: "Anna", desc: "-6 kg, wyrzeźbienie sylwetki." },
+        { before: "/assets/przed4.webp", after: "/assets/po4.webp", name: "Paweł", desc: "+4 kg masy mięśniowej." },
+        { before: "/assets/przed5.webp", after: "/assets/po5.webp", name: "Ola", desc: "-10 kg i poprawa kondycji." }
       ].map((c, idx) => (
         <div
           key={idx}
@@ -711,6 +723,10 @@ src="https://www.youtube.com/embed/kq6nOJkaReg?si=jG49M9kqEqZKHT5g"
               <img
                 src={c.before}
                 alt={`${c.name} przed`}
+                loading="lazy"
+                decoding="async"
+                width="300"
+                height="400"
                 className="w-full h-full object-cover rounded-lg"
               />
               <span className="absolute bottom-0 left-0 w-full bg-black/60 text-center text-xs text-white py-1 rounded-b-lg">
@@ -721,6 +737,10 @@ src="https://www.youtube.com/embed/kq6nOJkaReg?si=jG49M9kqEqZKHT5g"
               <img
                 src={c.after}
                 alt={`${c.name} po`}
+                loading="lazy"
+                decoding="async"
+                width="300"
+                height="400"
                 className="w-full h-full object-cover rounded-lg"
               />
               <span className="absolute bottom-0 left-0 w-full bg-black/60 text-center text-xs text-white py-1 rounded-b-lg">
@@ -739,6 +759,7 @@ src="https://www.youtube.com/embed/kq6nOJkaReg?si=jG49M9kqEqZKHT5g"
     </div>
   </div>
 </section>
+
 
 
       </div>
@@ -791,7 +812,7 @@ src="https://www.youtube.com/embed/kq6nOJkaReg?si=jG49M9kqEqZKHT5g"
     className="w-14 h-14 rounded-full bg-[#ffffff1a] backdrop-blur-sm flex items-center justify-center shadow-lg border border-[#d4af37] hover:scale-110 transition-transform"
     aria-label="Wyślij wiadomość na Messenger"
   >
-    <img src="/assets/mess.png" alt="Messenger" className="w-10 h-10" />
+    <img src="/assets/mess.webp" alt="Messenger" className="w-10 h-10" />
   </a>
   <a
     href="https://instagram.com/mateusz.garbas"
@@ -800,7 +821,7 @@ src="https://www.youtube.com/embed/kq6nOJkaReg?si=jG49M9kqEqZKHT5g"
     className="w-14 h-14 rounded-full bg-[#ffffff1a] backdrop-blur-sm flex items-center justify-center shadow-lg border border-[#d4af37] hover:scale-110 transition-transform"
     aria-label="Otwórz Instagram"
   >
-    <img src="/assets/instagram.png" alt="Instagram" className="w-10 h-10" />
+    <img src="/assets/instagram.webp" alt="Instagram" className="w-10 h-10" />
   </a>
 </div>
 
@@ -830,7 +851,7 @@ src="https://www.youtube.com/embed/kq6nOJkaReg?si=jG49M9kqEqZKHT5g"
         className="w-10 h-10 rounded-full bg-[#ffffff] backdrop-blur-sm flex items-center justify-center shadow-lg border border-[#d4af37] hover:scale-110 transition-transform"
         aria-label="Wyślij wiadomość na Messenger"
       >
-        <img src="/assets/mess.png" alt="Messenger" className="w-8 h-8" />
+        <img src="/assets/mess.webp" alt="Messenger" className="w-8 h-8" />
       </a>
       <a
         href="https://instagram.com/mateusz.garbas"
@@ -839,7 +860,7 @@ src="https://www.youtube.com/embed/kq6nOJkaReg?si=jG49M9kqEqZKHT5g"
         className="w-10 h-10 rounded-full bg-[#ffffff] backdrop-blur-sm flex items-center justify-center shadow-lg border border-[#d4af37] hover:scale-110 transition-transform"
         aria-label="Otwórz Instagram"
       >
-        <img src="/assets/instagram.png" alt="Instagram" className="w-8 h-8" />
+        <img src="/assets/instagram.webp" alt="Instagram" className="w-8 h-8" />
       </a>
     </div>
   </>
