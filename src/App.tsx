@@ -685,18 +685,42 @@ const [isHovering] = useState(false);
     </div>
   </div>
 </section>
+{/* STOPKA */}
+<footer className="py-10 border-t border-neutral-800 text-sm">
+  <div className="mx-auto max-w-6xl px-4 flex flex-col md:flex-row gap-4 items-center justify-between">
+    <div className="text-neutral-400">
+      © {new Date().getFullYear()} Mateusz Garbas. Wszelkie prawa zastrzeżone.
+    </div>
+    <div className="flex gap-4 text-neutral-400">
+      <a
+        href="https://1drv.ms/w/c/f0f134e394e04c2d/Ed0fv3lva2dLsfQFnxwQfmYBJs4TYGxIm5B33uqiQJEnJA?e=L0juVw"
+        className="hover:opacity-80"
+        target="_blank"
+        rel="noopener"
+      >
+        Regulamin
+      </a>
+      <a
+        href="https://1drv.ms/w/c/f0f134e394e04c2d/Eco7GFxaO5BPrTrDfbulBZkB_ctC1simPP2PsuG10RSznw?e=PmeuZd"
+        className="hover:opacity-80"
+        target="_blank"
+        rel="noopener"
+      >
+        Polityka prywatnosci
+      </a>
+      <a
+        href="https://1drv.ms/w/c/f0f134e394e04c2d/Edg6u4a4UrJKrkEcKGVBTS8Br5pmnYtA5aysngndYIgmCA?e=TZepIT"
+        className="hover:opacity-80"
+        target="_blank"
+        rel="noopener"
+      >
+        Wysylka i platnosci
+      </a>
+    </div>
+  </div>
+</footer>
 
-      {/* STOPKA */}
-      <footer className="py-10 border-t border-neutral-800 text-sm">
-        <div className="mx-auto max-w-6xl px-4 flex flex-col md:flex-row gap-4 items-center justify-between">
-          <div className="text-neutral-400">© {new Date().getFullYear()} Mateusz Garbas. Wszelkie prawa zastrzeżone.</div>
-          <div className="flex gap-4 text-neutral-400">
-            <a href="#" className="hover:opacity-80">Regulamin</a>
-            <a href="#" className="hover:opacity-80">Polityka prywatności</a>
-            <a href="#" className="hover:opacity-80">Wysyłka i płatności</a>
-          </div>
-        </div>
-      </footer>
+
 
       {/* Floating Messenger / Instagram */}
       {!cartOpen && (
