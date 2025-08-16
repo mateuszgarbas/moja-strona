@@ -28,8 +28,8 @@ const REVIEWS: [string, string][] = [
 /** Pakiety */
 const PACKAGES = [
   { title: "Pakiet Essential", features: ["Raporty co 4 tygodnie", "Pełne prowadzenie treningowe", "Monitorowanie diety"] },
-  { title: "Pakiet Essential Plus", features: ["Raporty co 2 tygodnie", "Pełne prowadzenie treningowe", "Monitorowanie diety", "20% zniżki na e-booki", "Analiza psychologiczna stylu motywacji", "Kontakt w razie pytań" , "Gwarancja satysfakcji"] },
-  { title: "Pakiet PRO", features: ["Raporty co tydzień", "Pełne prowadzenie treningowe", "Monitorowanie diety", "E-book gratis", "Analiza psychologiczna stylu motywacji", "Priorytetowy kontakt" , "Gwarancja satysfakcji"] }
+  { title: "Pakiet Essential Plus", features: ["Raporty co 2 tygodnie", "Pełne prowadzenie treningowe", "Monitorowanie diety", "Analiza psychologiczna motywacji", "Kontakt w razie pytań" , "Gwarancja satysfakcji"] },
+  { title: "Pakiet PRO", features: ["Raporty co tydzień", "Pełne prowadzenie treningowe", "Monitorowanie diety", "Analiza psychologiczna motywacji", "Priorytetowy kontakt" , "Gwarancja satysfakcji"] }
 ];
 
 /** Hook: sprawdzanie czy element jest w widoku */
