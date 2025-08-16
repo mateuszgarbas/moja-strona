@@ -483,7 +483,7 @@ const [isHovering] = useState(false);
                   { f: "Raporty", v: ["co 4 tyg.", "co 2 tyg.", "co tydzień"] },
                   { f: "Prowadzenie treningowe", v: ["✓", "✓", "✓"] },
                   { f: "Monitorowanie diety", v: ["✓", "✓", "✓"] },
-                  { f: "Analiza stylu motywacji", v: ["—", "✓", "✓"] },
+                  { f: "Analiza stylu motywacji", v: ["—", "—", "✓"] },
                   { f: "Kontakt priorytetowy", v: ["—", "—", "✓"] } ,
                   { f: "Gwarancja Satysfakcji", v: ["—", "✓", "✓"] }
 
