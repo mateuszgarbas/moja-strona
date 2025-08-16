@@ -180,7 +180,7 @@ const [isHovering] = useState(false);
               href="#konsultacja"
               className="px-4 py-2 text-sm font-bold rounded-2xl text-black bg-white shadow-[0_0_15px_rgba(255,255,255,0.8)] hover:shadow-[0_0_25px_rgba(255,255,255,1)] transition-all duration-300 md:px-8 md:py-4 md:text-xl"
             >
-              Umów konsultację
+              Dołącz do Programu
             </a>
           </div>
         </nav>
@@ -222,7 +222,7 @@ const [isHovering] = useState(false);
                     "0 0 15px rgba(212, 175, 55, 0.8)")
                 }
               >
-                Umów konsultację
+                Dołącz do Programu
               </a>
             </div>
 
@@ -334,37 +334,38 @@ const [isHovering] = useState(false);
                 before: "/assets/przed1.webp",
                 after: "/assets/po1.webp",
                 name: "Marek",
-                desc: "5 miesięcy – +5 kg masy mięśniowej."
+                desc: "1 miesiąc mini cut – -8 kg (tłuszcz i woda)."
               }
             ].map((c, idx) => (
               <div
-                key={idx}
-                className="rounded-2xl border border-neutral-800 p-4 bg-neutral-900/40 flex flex-col justify-between h-full"
-              >
-                <div className="w-full aspect-[3/4] overflow-hidden rounded-xl">
-                  <ReactCompareImage
-                    leftImage={c.before}
-                    rightImage={c.after}
-                    sliderLineColor={GOLD}
-                    leftImageCss={{
-                      objectFit: "cover",
-                      width: "100%",
-                      height: "100%",
-                      objectPosition: "center"
-                    }}
-                    rightImageCss={{
-                      objectFit: "cover",
-                      width: "100%",
-                      height: "100%",
-                      objectPosition: "center"
-                    }}
-                  />
-                </div>
-                <div className="mt-4 text-center">
-                  <div className="font-semibold">{c.name}</div>
-                  <div className="text-neutral-300 text-base min-h-[40px]">{c.desc}</div>
-                </div>
-              </div>
+  key={idx}
+  className="rounded-2xl border border-neutral-800 p-4 bg-neutral-900/40 flex flex-col h-full"
+>
+  <div className="flex-grow overflow-hidden rounded-xl">
+    <ReactCompareImage
+      leftImage={c.before}
+      rightImage={c.after}
+      sliderLineColor={GOLD}
+      leftImageCss={{
+        objectFit: "cover",
+        width: "100%",
+        height: "100%",
+        objectPosition: "center"
+      }}
+      rightImageCss={{
+        objectFit: "cover",
+        width: "100%",
+        height: "100%",
+        objectPosition: "center"
+      }}
+    />
+  </div>
+  <div className="mt-4 text-center">
+    <div className="font-semibold">{c.name}</div>
+    <div className="text-neutral-300 text-base min-h-[40px]">{c.desc}</div>
+  </div>
+</div>
+
             ))}
           </div>
         </div>
@@ -478,7 +479,7 @@ const [isHovering] = useState(false);
               <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-white md:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10m-12 9h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v11a2 2 0 002 2z" />
               </svg>
-              <span className="hidden md:inline text-white font-bold">Umów konsultację</span>
+              <span className="hidden md:inline text-white font-bold">Dołącz do Programu</span>
             </a>
           </div>
         </div>
@@ -539,9 +540,9 @@ const [isHovering] = useState(false);
           <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide">
             {[
               { before: "/assets/przed2.webp", after: "/assets/po2.webp", name: "Kasia", desc: "3 miesiące – -8 kg, poprawa siły i wytrzymałości." },
-              { before: "/assets/przed1.webp", after: "/assets/po1.webp", name: "Marek", desc: "5 miesięcy – +5 kg masy mięśniowej." },
-              { before: "/assets/przed3.webp", after: "/assets/po3.webp", name: "Anna", desc: "-6 kg, wyrzeźbienie sylwetki." },
-              { before: "/assets/przed4.webp", after: "/assets/po4.webp", name: "Paweł", desc: "+4 kg masy mięśniowej." },
+              { before: "/assets/przed1.webp", after: "/assets/po1.webp", name: "Marek", desc: "1 miesiąc mini cut – -8 kg (tłuszcz i woda)." },
+              { before: "/assets/przed4.webp", after: "/assets/po4.webp", name: "Anna", desc: "-6 kg, wyrzeźbienie sylwetki." },
+              { before: "/assets/przed3.webp", after: "/assets/po3.webp", name: "Paweł", desc: "+4 kg masy mięśniowej." },
               { before: "/assets/przed5.webp", after: "/assets/po5.webp", name: "Ola", desc: "-10 kg i poprawa kondycji." }
             ].map((c, idx) => (
               <div key={idx} className="min-w-[250px] rounded-2xl border border-neutral-800 p-4 bg-neutral-900/40 flex flex-col justify-between">
@@ -610,22 +611,28 @@ const [isHovering] = useState(false);
         </a>
       </div>
 
-      {/* KONSULTACJA */}
+{/* KONTAKT */}
 <section id="konsultacja" className="py-16 border-t border-neutral-800">
   <div className="mx-auto max-w-6xl px-4">
     <h2 className="text-3xl font-bold text-center" style={{ color: GOLD }}>
-      WYBIERZ TERMIN SWOJEJ KONSULTACJI
-    </h2>
+    Dołącz do Programu - Zostaw do Siebie kontakt    </h2>
     <div className="mt-8 rounded-2xl border border-neutral-800 overflow-hidden bg-neutral-900/60 shadow-lg p-3 max-w-3xl mx-auto">
       <iframe
-        title="Calendly"
-        src="https://calendly.com/mateuszgarbas/45min?hide_event_type_details=1&hide_gdpr_banner=1"
-        className="w-full h-[500px] rounded-xl"
-        style={{ backgroundColor: "white", border: "none" }}
-      />
+        src="https://docs.google.com/forms/d/e/1FAIpQLSc8fTWzbjCxu3ShW_rvPpZ90q2yTSeAJrY8omW4hh14wr9OEg/viewform?embedded=true"
+        width="640"
+        height="700"
+        frameBorder="0"
+        marginHeight={0}
+        marginWidth={0}
+        title="Formularz kontaktowy"
+        className="rounded-xl bg-white w-full"
+      >
+        Ładuję…
+      </iframe>
     </div>
   </div>
 </section>
+
 
 
       {/* STOPKA */}
