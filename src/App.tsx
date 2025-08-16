@@ -102,8 +102,9 @@ const [placesLeft, setPlacesLeft] = useState(() => {
   }, []);
 
   useEffect(() => {
-  localStorage.setItem("placesLeft", placesLeft);
+localStorage.setItem("placesLeft", placesLeft.toString());
 }, [placesLeft]);
+
 
 useEffect(() => {
   const today = new Date();
