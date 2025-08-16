@@ -28,8 +28,8 @@ const REVIEWS: [string, string][] = [
 /** Pakiety */
 const PACKAGES = [
   { title: "Pakiet Essential", features: ["Raporty co 4 tygodnie", "Pełne prowadzenie treningowe", "Monitorowanie diety"] },
-  { title: "Pakiet Essential Plus", features: ["Raporty co 2 tygodnie", "Pełne prowadzenie treningowe", "Monitorowanie diety", "20% zniżki na e-booki", "Analiza psychologiczna stylu motywacji", "Kontakt w razie pytań"] },
-  { title: "Pakiet PRO", features: ["Raporty co tydzień", "Pełne prowadzenie treningowe", "Monitorowanie diety", "E-book gratis", "Analiza psychologiczna stylu motywacji", "Priorytetowy kontakt"] }
+  { title: "Pakiet Essential Plus", features: ["Raporty co 2 tygodnie", "Pełne prowadzenie treningowe", "Monitorowanie diety", "20% zniżki na e-booki", "Analiza psychologiczna stylu motywacji", "Kontakt w razie pytań" , "Gwarancja satysfakcji"] },
+  { title: "Pakiet PRO", features: ["Raporty co tydzień", "Pełne prowadzenie treningowe", "Monitorowanie diety", "E-book gratis", "Analiza psychologiczna stylu motywacji", "Priorytetowy kontakt" , "Gwarancja satysfakcji"] }
 ];
 
 /** Hook: sprawdzanie czy element jest w widoku */
@@ -87,7 +87,10 @@ function CountUp({ end, duration = 1.6, suffix = "+" }: { end: number; duration?
 }
 
 export default function App() {
-  const [placesLeft, setPlacesLeft] = useState(7);
+const [placesLeft, setPlacesLeft] = useState(() => {
+  const stored = localStorage.getItem("placesLeft");
+  return stored !== null ? parseInt(stored) : 7; // ← 7 to wartość domyślna
+});
   const countRef = useRef<HTMLSpanElement | null>(null);
   const [cartOpen] = useState(false);
 
@@ -97,6 +100,26 @@ export default function App() {
     }, 155000);
     return () => clearInterval(timer);
   }, []);
+
+  useEffect(() => {
+  localStorage.setItem("placesLeft", placesLeft);
+}, [placesLeft]);
+
+useEffect(() => {
+  const today = new Date();
+  const isFirstDay = today.getDate() === 1;
+
+  const lastReset = localStorage.getItem("placesLastReset");
+
+  // Format: YYYY-MM
+  const currentMonthKey = `${today.getFullYear()}-${today.getMonth() + 1}`;
+
+  if (isFirstDay && lastReset !== currentMonthKey) {
+    setPlacesLeft(7); // ← domyślna liczba miejsc
+    localStorage.setItem("placesLastReset", currentMonthKey);
+  }
+}, []);
+
 
   useEffect(() => {
     if (countRef.current) {
@@ -150,6 +173,7 @@ const [isHovering] = useState(false);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
+  
   return (
     <div className="min-h-screen bg-black text-white antialiased">
       {/* NAV */}
@@ -205,26 +229,26 @@ const [isHovering] = useState(false);
 
             {/* Przyciski */}
             <div className="mt-6 flex gap-4 flex-wrap justify-center md:justify-start">
-              <a
-                href="#konsultacja"
-                className="text-xl px-8 py-4 font-bold rounded-2xl text-black"
-                style={{
-                  backgroundColor: "#d4af37",
-                  boxShadow: "0 0 15px rgba(212, 175, 55, 0.8)",
-                  transition: "all 0.3s ease"
-                }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.boxShadow =
-                    "0 0 25px rgba(212, 175, 55, 1)")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.boxShadow =
-                    "0 0 15px rgba(212, 175, 55, 0.8)")
-                }
-              >
-                Dołącz do Programu
-              </a>
-            </div>
+  <a
+    href="#konsultacja"
+    className="text-xl px-8 py-4 font-bold rounded-2xl text-black"
+    style={{
+      backgroundColor: "#fff200", // neon yellow
+      boxShadow: "0 0 20px rgba(255, 242, 0, 0.9)",
+      transition: "all 0.3s ease"
+    }}
+    onMouseEnter={(e) =>
+      (e.currentTarget.style.boxShadow =
+        "0 0 35px rgba(255, 242, 0, 1)")
+    }
+    onMouseLeave={(e) =>
+      (e.currentTarget.style.boxShadow =
+        "0 0 20px rgba(255, 242, 0, 0.9)")
+    }
+  >
+    Dołącz do Programu
+  </a>
+</div>
 
             {/* Licznik */}
             <div
@@ -418,9 +442,11 @@ const [isHovering] = useState(false);
               Oferta
             </h2>
           </div>
-          <p className="text-neutral-300 mt-2 max-w-prose mx-auto text-center text-lg">
-            Wszystkie opcje zawierają pełne prowadzenie treningowe online oraz monitorowanie diety. Do każdego pakietu dorzucam gwarancję satysfakcji – jeśli nie zrobisz postępu wg planu i raportów, otrzymasz kolejny miesiąc gratis pod moją opieką.
-          </p>
+         <p className="text-neutral-300 mt-2 max-w-prose mx-auto text-center text-lg">
+            Wszystkie opcje zawierają pełne prowadzenie treningowe online oraz monitorowanie diety.
+        </p>
+
+
 
           <div className="mt-8 grid md:grid-cols-3 gap-6">
             {PACKAGES.map((p) => (
@@ -458,7 +484,9 @@ const [isHovering] = useState(false);
                   { f: "Monitorowanie diety", v: ["✓", "✓", "✓"] },
                   { f: "Zniżka na e-booki / e-book", v: ["—", "20%", "E-book gratis"] },
                   { f: "Analiza stylu motywacji", v: ["—", "✓", "✓"] },
-                  { f: "Kontakt priorytetowy", v: ["—", "—", "✓"] }
+                  { f: "Kontakt priorytetowy", v: ["—", "—", "✓"] } ,
+                  { f: "Gwarancja Satysfakcji", v: ["—", "✓", "✓"] }
+
                 ].map((row, i) => (
                   <tr key={i} className="odd:bg-neutral-950">
                     <td className="p-3.5 border-t border-neutral-800">{row.f}</td>
