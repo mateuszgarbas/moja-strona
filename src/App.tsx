@@ -93,6 +93,8 @@ const [placesLeft, setPlacesLeft] = useState(() => {
 });
   const countRef = useRef<HTMLSpanElement | null>(null);
   const [cartOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -177,39 +179,72 @@ const [isHovering] = useState(false);
   
   return (
     <div className="min-h-screen bg-black text-white antialiased">
-      {/* NAV */}
-      <header
-        className={`sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-black/70 border-b border-neutral-800 shadow-md md:shadow-none transition-transform duration-300 md:translate-y-0 ${
-          isVisible ? "translate-y-0" : "-translate-y-full"
-        }`}
-      >
-        <nav className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
-          {/* Logo */}
-          <a href="#top" className="flex items-center gap-2 font-semibold text-lg">
-            <img
-              src="/assets/favicon.webp"
-              alt="Logo"
-              className="h-12 w-12 rounded-full border border-[#d4af37]"
-              loading="lazy"
-              decoding="async"
-            />
-            Mateusz Garbas
-          </a>
+     {/* NAV */}
+<header
+  className={`sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-black/70 border-b border-neutral-800 shadow-md md:shadow-none transition-transform duration-300 md:translate-y-0 ${
+    isVisible ? "translate-y-0" : "-translate-y-full"
+  }`}
+>
+  <nav className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+    {/* Logo */}
+    <a href="#top" className="flex items-center gap-2 font-semibold text-lg">
+      <img
+        src="/assets/favicon.webp"
+        alt="Logo"
+        className="h-12 w-12 rounded-full border border-[#d4af37]"
+        loading="lazy"
+        decoding="async"
+      />
+      Mateusz Garbas
+    </a>
 
-          {/* Linki + przycisk */}
-          <div className="hidden md:flex items-center gap-8 text-lg font-sans tracking-wide font-semibold mx-auto translate-x-[-40px]">
-            <a href="#oferta" className="transition-colors duration-200 hover:text-[#d4af37]">OFERTA</a>
-            <a href="#opinie" className="transition-colors duration-200 hover:text-[#d4af37]">OPINIE</a>
-            <a href="#faq" className="transition-colors duration-200 hover:text-[#d4af37]">FAQ</a>
-            <a
-              href="#konsultacja"
-              className="px-4 py-2 text-sm font-bold rounded-2xl text-black bg-white shadow-[0_0_15px_rgba(255,255,255,0.8)] hover:shadow-[0_0_25px_rgba(255,255,255,1)] transition-all duration-300 md:px-8 md:py-4 md:text-xl"
-            >
-              Dołącz do Programu
-            </a>
-          </div>
-        </nav>
-      </header>
+    {/* Hamburger (mobile) */}
+    <button
+      type="button"
+      className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-neutral-700 hover:bg-white/5 transition"
+      aria-label={menuOpen ? "Zamknij menu" : "Otwórz menu"}
+      aria-expanded={menuOpen}
+      onClick={() => setMenuOpen(v => !v)}
+    >
+      {/* prosta ikonka burgera */}
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+      </svg>
+    </button>
+
+    {/* Linki desktop */}
+    <div className="hidden md:flex items-center gap-8 text-lg font-sans tracking-wide font-semibold mx-auto translate-x-[-40px]">
+      <a href="#oferta" className="transition-colors duration-200 hover:text-[#d4af37]">OFERTA</a>
+      <a href="#opinie" className="transition-colors duration-200 hover:text-[#d4af37]">OPINIE</a>
+      <a href="#faq" className="transition-colors duration-200 hover:text-[#d4af37]">FAQ</a>
+      <a
+        href="#konsultacja"
+        className="px-4 py-2 text-sm font-bold rounded-2xl text-black bg-white shadow-[0_0_15px_rgba(255,255,255,0.8)] hover:shadow-[0_0_25px_rgba(255,255,255,1)] transition-all duration-300 md:px-8 md:py-4 md:text-xl"
+      >
+        Dołącz do Programu
+      </a>
+    </div>
+  </nav>
+
+  {/* Menu mobilne (panel pod nawigacją) */}
+  {menuOpen && (
+    <div className="md:hidden border-t border-neutral-800 bg-black/90 backdrop-blur px-4 py-3">
+      <div className="flex flex-col gap-3 text-base font-semibold">
+        <a href="#oferta" onClick={() => setMenuOpen(false)} className="hover:text-[#d4af37]">OFERTA</a>
+        <a href="#opinie" onClick={() => setMenuOpen(false)} className="hover:text-[#d4af37]">OPINIE</a>
+        <a href="#faq" onClick={() => setMenuOpen(false)} className="hover:text-[#d4af37]">FAQ</a>
+        <a
+          href="#konsultacja"
+          onClick={() => setMenuOpen(false)}
+          className="px-4 py-3 text-center rounded-2xl text-black bg-white font-bold shadow hover:shadow-lg transition"
+        >
+          Dołącz do Programu
+        </a>
+      </div>
+    </div>
+  )}
+</header>
+
 
       {/* HERO */}
       <section id="top" className="relative overflow-hidden">
@@ -429,8 +464,8 @@ const [isHovering] = useState(false);
       </section>
 
       {/* OFERTA */}
-      <section id="oferta" className="py-16 border-t border-neutral-800">
-        <div className="mx-auto max-w-6xl px-4">
+<section id="oferta" className="scroll-mt-24 py-16 border-t border-neutral-800">
+          <div className="mx-auto max-w-6xl px-4">
           <div className="text-center">
             <h2
               className="text-4xl md:text-5xl font-extrabold mb-6 px-6 py-3 rounded-2xl mx-auto w-fit"
@@ -514,7 +549,7 @@ const [isHovering] = useState(false);
       </section>
 
       {/* OPINIE */}
-      <section id="opinie" className="py-16 border-t border-neutral-800">
+<section id="opinie" className="scroll-mt-24 py-16 border-t border-neutral-800">
         <div className="mx-auto max-w-6xl px-4">
           <div className="text-center">
             <h2
@@ -609,7 +644,7 @@ const [isHovering] = useState(false);
 
 
           {/* FAQ */}
-      <section id="faq" className="py-16">
+<section id="faq" className="scroll-mt-24 py-16">
         <div className="mx-auto max-w-6xl px-4">
           <h2 className="text-3xl font-bold text-center" style={{ color: GOLD }}>Najczęstsze pytania</h2>
           <div className="mt-6 grid md:grid-cols-2 gap-6">
@@ -653,7 +688,7 @@ const [isHovering] = useState(false);
       </div>
 
 {/* KONTAKT */}
-<section id="konsultacja" className="py-16 border-t border-neutral-800">
+<section id="konsultacja" className="scroll-mt-24 py-16 border-t border-neutral-800">
   <div className="mx-auto max-w-6xl px-4">
     <h2 className="text-3xl font-bold text-center mb-4" style={{ color: "#fff200" }}>
       Gotowy, żeby zacząć?
