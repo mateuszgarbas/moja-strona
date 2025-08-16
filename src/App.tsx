@@ -28,7 +28,7 @@ const REVIEWS: [string, string][] = [
 /** Pakiety */
 const PACKAGES = [
   { title: "Pakiet Essential", features: ["Raporty co 4 tygodnie", "Pełne prowadzenie treningowe", "Monitorowanie diety"] },
-  { title: "Pakiet Essential Plus", features: ["Raporty co 2 tygodnie", "Pełne prowadzenie treningowe", "Monitorowanie diety", "Analiza psychologiczna motywacji", "Kontakt w razie pytań" , "Gwarancja satysfakcji"] },
+  { title: "Pakiet Essential Plus", features: ["Raporty co 2 tygodnie", "Pełne prowadzenie treningowe", "Monitorowanie diety", "Kontakt w razie pytań" , "Gwarancja satysfakcji"] },
   { title: "Pakiet PRO", features: ["Raporty co tydzień", "Pełne prowadzenie treningowe", "Monitorowanie diety", "Analiza psychologiczna motywacji", "Priorytetowy kontakt" , "Gwarancja satysfakcji"] }
 ];
 
