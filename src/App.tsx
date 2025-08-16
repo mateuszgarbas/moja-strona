@@ -642,26 +642,34 @@ const [isHovering] = useState(false);
 {/* KONTAKT */}
 <section id="konsultacja" className="py-16 border-t border-neutral-800">
   <div className="mx-auto max-w-6xl px-4">
-    <h2 className="text-3xl font-bold text-center" style={{ color: GOLD }}>
-    Dołącz do Programu - Zostaw do Siebie kontakt    </h2>
-    <div className="mt-8 rounded-2xl border border-neutral-800 overflow-hidden bg-neutral-900/60 shadow-lg p-3 max-w-3xl mx-auto">
-      <iframe
-        src="https://docs.google.com/forms/d/e/1FAIpQLSc8fTWzbjCxu3ShW_rvPpZ90q2yTSeAJrY8omW4hh14wr9OEg/viewform?embedded=true"
-        width="640"
-        height="700"
-        frameBorder="0"
-        marginHeight={0}
-        marginWidth={0}
-        title="Formularz kontaktowy"
-        className="rounded-xl bg-white w-full"
+    <h2 className="text-3xl font-bold text-center mb-4" style={{ color: "#fff200" }}>
+      Gotowy, żeby zacząć?
+    </h2>
+    <p className="text-center text-neutral-300 max-w-prose mx-auto text-lg mb-8">
+      Kliknij w przycisk poniżej i wypełnij krótki formularz — odezwę się do Ciebie z planem działania!
+    </p>
+    <div className="text-center">
+      <a
+        href="https://forms.gle/gWb73dYNUmcmZ7Nx7"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block px-8 py-4 rounded-2xl font-bold text-black text-lg transition-all duration-300"
+        style={{
+          backgroundColor: "#fff200",
+          boxShadow: "0 0 20px rgba(255, 242, 0, 0.9)",
+        }}
+        onMouseEnter={(e) =>
+          (e.currentTarget.style.boxShadow = "0 0 35px rgba(255, 242, 0, 1)")
+        }
+        onMouseLeave={(e) =>
+          (e.currentTarget.style.boxShadow = "0 0 20px rgba(255, 242, 0, 0.9)")
+        }
       >
-        Ładuję…
-      </iframe>
+        Dołącz do Programu
+      </a>
     </div>
   </div>
 </section>
-
-
 
       {/* STOPKA */}
       <footer className="py-10 border-t border-neutral-800 text-sm">
