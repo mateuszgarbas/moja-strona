@@ -178,7 +178,7 @@ const [isHovering] = useState(false);
 
   
   return (
-    <div className="min-h-screen bg-black text-white antialiased">
+  <div className="min-h-screen bg-black text-white antialiased overflow-x-hidden">
      {/* NAV */}
 <header
   className={`sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-black/70 border-b border-neutral-800 shadow-md md:shadow-none transition-transform duration-300 md:translate-y-0 ${
@@ -387,14 +387,14 @@ const [isHovering] = useState(false);
               {
                 before: "/assets/przed2.webp",
                 after: "/assets/po2.webp",
-                name: "Kasia",
-                desc: "3 miesiące – -8 kg, poprawa siły i wytrzymałości."
+                name: "",
+                desc: ""
               },
               {
                 before: "/assets/przed1.webp",
                 after: "/assets/po1.webp",
                 name: "Marek",
-                desc: "1 miesiąc mini cut – -8 kg (tłuszcz i woda)."
+                desc: "1 miesiąc mini cut – -8 kg"
               }
             ].map((c, idx) => (
               <div
@@ -615,11 +615,11 @@ const [isHovering] = useState(false);
 
           <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide">
             {[
-              { before: "/assets/przed2.webp", after: "/assets/po2.webp", name: "Kasia", desc: "3 miesiące – -8 kg, poprawa siły i wytrzymałości." },
-              { before: "/assets/przed1.webp", after: "/assets/po1.webp", name: "Marek", desc: "1 miesiąc mini cut – -8 kg (tłuszcz i woda)." },
-              { before: "/assets/przed4.webp", after: "/assets/po4.webp", name: "Anna", desc: "-6 kg, wyrzeźbienie sylwetki." },
-              { before: "/assets/przed3.webp", after: "/assets/po3.webp", name: "Paweł", desc: "+4 kg masy mięśniowej." },
-              { before: "/assets/przed5.webp", after: "/assets/po5.webp", name: "Ola", desc: "-10 kg i poprawa kondycji." }
+              { before: "/assets/przed2.webp", after: "/assets/po2.webp", name: "", desc: "" },
+              { before: "/assets/przed1.webp", after: "/assets/po1.webp", name: "Marek", desc: "1 miesiąc mini cut – -8 kg" },
+              { before: "/assets/przed4.webp", after: "/assets/po4.webp", name: "", desc: "" },
+              { before: "/assets/przed3.webp", after: "/assets/po3.webp", name: "", desc: "" },
+              { before: "/assets/przed5.webp", after: "/assets/po5.webp", name: "", desc: "" }
             ].map((c, idx) => (
               <div key={idx} className="min-w-[250px] rounded-2xl border border-neutral-800 p-4 bg-neutral-900/40 flex flex-col justify-between">
                 <div className="flex gap-2">
