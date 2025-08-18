@@ -89,7 +89,7 @@ function CountUp({ end, duration = 1.6, suffix = "+" }: { end: number; duration?
 export default function App() {
 const [placesLeft, setPlacesLeft] = useState(() => {
   const stored = localStorage.getItem("placesLeft");
-  return stored !== null ? parseInt(stored) : 7; // ← 7 to wartość domyślna
+  return stored !== null ? parseInt(stored) : 11; // ← 7 to wartość domyślna
 });
   const countRef = useRef<HTMLSpanElement | null>(null);
   const [cartOpen] = useState(false);
@@ -118,7 +118,7 @@ useEffect(() => {
   const currentMonthKey = `${today.getFullYear()}-${today.getMonth() + 1}`;
 
   if (isFirstDay && lastReset !== currentMonthKey) {
-    setPlacesLeft(7); // ← domyślna liczba miejsc
+    setPlacesLeft(11); // ← domyślna liczba miejsc
     localStorage.setItem("placesLastReset", currentMonthKey);
   }
 }, []);
