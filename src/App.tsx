@@ -459,7 +459,7 @@ const [isHovering] = useState(false);
       {/* Opis */}
       <div className="text-lg text-neutral-300">
         <p>
-          3 Miejsce w zawodach WNBF naturals - OKUNFIT <strong>XYZ Ranking</strong>.
+          3 Miejsce w zawodach WNBF naturals - OKUNFIT <strong>Brązowy Medal</strong>.
         </p>
       </div>
     </div>
@@ -620,7 +620,7 @@ const [isHovering] = useState(false);
 </h2>
           </div>
 
-          <div className="relative mt-8 overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide">
+            <div className="relative mt-8 overflow-x-auto snap-x snap-mandatory scroll-smooth custom-scrollbar">
             <div className="flex gap-5 w-max">
               {[...REVIEWS, ...REVIEWS].map(([name, text], idx) => (
                 <div key={idx} className="inline-block align-top snap-center" style={{ flex: "0 0 auto" }}>
