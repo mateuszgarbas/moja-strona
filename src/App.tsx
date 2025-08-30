@@ -431,6 +431,42 @@ const [isHovering] = useState(false);
         </div>
       </section>
 
+      {/* OSIĄGNIĘCIA */}
+<section id="osiagniecia" className="py-16 border-t border-neutral-800">
+  <div className="mx-auto max-w-6xl px-4">
+    <h2
+      className="text-4xl md:text-5xl font-extrabold mb-10 text-center px-6 py-3 rounded-2xl w-fit mx-auto"
+      style={{
+        color: GOLD,
+        background: "rgba(255, 255, 255, 0.05)",
+        border: `1px solid ${GOLD}`
+      }}
+    >
+      Osiągnięcia
+    </h2>
+
+    <div className="grid md:grid-cols-2 gap-8 items-center">
+      {/* Obrazek */}
+      <div>
+        <img
+          src="/assets/osiagniecie1.webp"
+          alt="Certyfikat lub wydarzenie"
+          className="rounded-2xl border border-neutral-800 w-full max-w-md mx-auto"
+          loading="lazy"
+        />
+      </div>
+
+      {/* Opis */}
+      <div className="text-lg text-neutral-300">
+        <p>
+          3 Miejsce w zawodach WNBF naturals - OKUNFIT <strong>XYZ Ranking</strong>.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
       {/* WSPÓŁPRACA */}
       <section id="kroki" className="py-16 border-t border-neutral-800">
         <div className="mx-auto max-w-6xl px-4">
