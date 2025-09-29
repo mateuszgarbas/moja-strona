@@ -317,9 +317,7 @@ const [isHovering] = useState(false);
                 loading="lazy"
                 decoding="async"
                 fetchPriority="high"
-                className="w-full aspect-[4/5] object-cover rounded-3xl border border-neutral-700"
-                style={{ transform: "scaleX(-1)" }}
-              />
+                className="w-full aspect-[4/5] object-cover rounded-3xl border border-neutral-700"              />
             </picture>
           </div>
         </div>
