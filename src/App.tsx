@@ -319,7 +319,7 @@ const [isHovering] = useState(false);
                 fetchPriority="high"
                 className="w-full aspect-[4/5] object-cover rounded-3xl border border-neutral-700"              />
             </picture>
-          </div>
+          </div>§
         </div>
       </section>
 
@@ -729,12 +729,12 @@ const [isHovering] = useState(false);
     </h2>
    <div className="text-center">
   <p className="inline-block font-semibold text-neutral-800 bg-white rounded-xl px-4 py-2 text-lg mb-8 shadow">
-    Kliknij w przycisk poniżej i wypełnij krótki formularz — odezwę się do Ciebie z planem działania!
+    Kliknij w przycisk poniżej i Umów BEZPŁATNA Konsultaje!
   </p>
 </div>
     <div className="text-center">
       <a
-        href="https://forms.gle/gWb73dYNUmcmZ7Nx7"
+        href="https://calendly.com/mateuszgarbas/45min"
         target="_blank"
         rel="noopener noreferrer"
         className="inline-block px-8 py-4 rounded-2xl font-bold text-black text-lg transition-all duration-300"
