@@ -539,38 +539,6 @@ const [isHovering] = useState(false);
             ))}
           </div>
 
-          {/* Tabela porównawcza */}
-          <div className="mt-12 overflow-x-auto md:overflow-x-visible">
-            <table className="w-full text-xs md:text-sm border border-neutral-800 rounded-2xl overflow-hidden table-fixed">
-              <thead className="bg-neutral-900/60">
-                <tr>
-                  <th className="p-3.5 text-left text-lg font-semibold">Funkcja</th>
-                  {PACKAGES.map((p) => (
-                    <th key={p.title} className="p-3.5 text-left text-lg font-semibold">{p.title}</th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  { f: "Raporty", v: ["co 4 tyg.", "co 2 tyg.", "co tydzień"] },
-                  { f: "Prowadzenie treningowe", v: ["✓", "✓", "✓"] },
-                  { f: "Monitorowanie diety", v: ["✓", "✓", "✓"] },
-                  { f: "Analiza stylu motywacji", v: ["—", "—", "✓"] },
-                  { f: "Kontakt priorytetowy", v: ["—", "—", "✓"] } ,
-                  { f: "Gwarancja Satysfakcji", v: ["—", "✓", "✓"] }
-
-                ].map((row, i) => (
-                  <tr key={i} className="odd:bg-neutral-950">
-                    <td className="p-3.5 border-t border-neutral-800">{row.f}</td>
-                    {row.v.map((val, j) => (
-                      <td key={j} className="p-3.5 border-t border-neutral-800">{val}</td>
-                    ))}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
           <div className="mt-8 flex justify-center">
             <a
               href="#konsultacja"
