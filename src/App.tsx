@@ -99,7 +99,7 @@ const [placesLeft, setPlacesLeft] = useState(() => {
   useEffect(() => {
     const timer = setInterval(() => {
       setPlacesLeft(prev => (prev > 0 ? prev - 1 : 0));
-    }, 155000);
+    }, 1550000);
     return () => clearInterval(timer);
   }, []);
 
@@ -269,7 +269,7 @@ const [isHovering] = useState(false);
             {/* Przyciski */}
             <div className="mt-6 flex gap-4 flex-wrap justify-center md:justify-start">
   <a
-    href="#https://calendly.com/mateuszgarbas/45min"
+    href="https://calendly.com/mateuszgarbas/45min"
     className="text-xl px-8 py-4 font-bold rounded-2xl text-black"
     style={{
       backgroundColor: "#fff200", // neon yellow
