@@ -322,7 +322,7 @@ const [isHovering] = useState(false);
                 fetchPriority="high"
                 className="w-full aspect-[4/5] object-cover rounded-3xl border border-neutral-700"              />
             </picture>
-          </div>§
+          </div>
         </div>
       </section>
 
