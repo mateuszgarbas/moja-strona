@@ -500,58 +500,88 @@ const [isHovering] = useState(false);
         </div>
       </section>
 
-      {/* OFERTA */}
-<section id="oferta" className="scroll-mt-24 py-16 border-t border-neutral-800">
-          <div className="mx-auto max-w-6xl px-4">
-          <div className="text-center">
-            <h2
-              className="text-4xl md:text-5xl font-extrabold mb-6 px-6 py-3 rounded-2xl mx-auto w-fit"
-              style={{
-                color: GOLD,
-                background: "rgba(255, 255, 255, 0.05)",
-                border: `1px solid ${GOLD}`
-              }}
-            >
-              Oferta
-            </h2>
-          </div>
-         <p className="text-neutral-300 mt-2 max-w-prose mx-auto text-center text-lg">
-            Wszystkie opcje zawierają pełne prowadzenie treningowe online oraz monitorowanie diety.
-        </p>
+     <section id="oferta" className="scroll-mt-24 py-16 border-t border-neutral-800">
+  <div className="mx-auto max-w-6xl px-4">
+    <div className="text-center">
+      <h2
+        className="text-4xl md:text-5xl font-extrabold mb-6 px-6 py-3 rounded-2xl mx-auto w-fit"
+        style={{
+          color: GOLD,
+          background: "rgba(255, 255, 255, 0.05)",
+          border: `1px solid ${GOLD}`,
+        }}
+      >
+        Oferta
+      </h2>
+    </div>
+    <p className="text-neutral-300 mt-2 max-w-prose mx-auto text-center text-lg">
+      Wybierz jedną z dostępnych opcji i zacznij swoją transformację już dziś.
+    </p>
 
-
-
-          <div className="mt-8 grid md:grid-cols-3 gap-6">
-            {PACKAGES.map((p) => (
-              <div key={p.title} className="rounded-2xl border border-neutral-800 p-6 pb-12 bg-neutral-900/40">
-                <h3 className="text-xl font-semibold">{p.title}</h3>
-                <ul className="mt-4 space-y-2 text-lg leading-relaxed text-neutral-300">
-                  {p.features.map((f) => (
-                    <li key={f} className="flex items-center gap-2">
-                      <span className="inline-block h-2 w-2 rounded-full" style={{ background: GOLD }} /> {f}
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-10">
-                  <a href="#konsultacja" className={whiteButtonClass}>Zacznij teraz</a>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-8 flex justify-center">
-            <a
-              href="#konsultacja"
-              className="px-4 py-3 rounded-2xl bg-[#bf00ff] flex items-center justify-center shadow-[0_0_15px_rgba(191,0,255,0.8)] hover:shadow-[0_0_25px_rgba(191,0,255,1)] transition-all duration-300"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-white md:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10m-12 9h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v11a2 2 0 002 2z" />
-              </svg>
-              <span className="hidden md:inline text-white font-bold">Dołącz do Programu</span>
-            </a>
-          </div>
+    <div className="mt-8 grid md:grid-cols-3 gap-6">
+      {/* Box 1 - Darmowe wyzwanie */}
+      <div className="rounded-2xl border border-neutral-800 p-6 pb-12 bg-neutral-900/40">
+        <h3 className="text-xl font-semibold">Darmowe wyzwanie 30 dni</h3>
+        <ul className="mt-4 space-y-2 text-lg leading-relaxed text-neutral-300">
+          <li className="flex items-center gap-2">
+            <span className="inline-block h-2 w-2 rounded-full" style={{ background: GOLD }} />
+            Spalanie tłuszczu z brzucha
+          </li>
+          <li className="flex items-center gap-2">
+            <span className="inline-block h-2 w-2 rounded-full" style={{ background: GOLD }} />
+            Plan treningowy + dieta
+          </li>
+        </ul>
+        <div className="mt-10">
+          <a href="hhttps://drive.google.com/drive/folders/12aqcaEGqrgTMNW3Xa4Dkh0oDujL1PuvP?usp=drive_link" className={whiteButtonClass} target="_blank" rel="noopener noreferrer">
+            Pobierz za darmo
+          </a>
         </div>
-      </section>
+      </div>
+
+      {/* Box 2 - Płatne wyzwanie */}
+      <div className="rounded-2xl border border-neutral-800 p-6 pb-12 bg-neutral-900/40">
+        <h3 className="text-xl font-semibold">Wyzwanie 90 dni</h3>
+        <ul className="mt-4 space-y-2 text-lg leading-relaxed text-neutral-300">
+          <li className="flex items-center gap-2">
+            <span className="inline-block h-2 w-2 rounded-full" style={{ background: GOLD }} />
+            Spalanie tłuszczu i budowa mięśni
+          </li>
+          <li className="flex items-center gap-2">
+            <span className="inline-block h-2 w-2 rounded-full" style={{ background: GOLD }} />
+            Codzienne wsparcie online
+          </li>
+        </ul>
+        <div className="mt-10">
+          <a href="https://your-payment-link.com" className={whiteButtonClass} target="_blank" rel="noopener noreferrer">
+            Dołącz teraz
+          </a>
+        </div>
+      </div>
+
+      {/* Box 3 - Prowadzenie 1:1 */}
+      <div className="rounded-2xl border border-neutral-800 p-6 pb-12 bg-neutral-900/40">
+        <h3 className="text-xl font-semibold">Prowadzenie 1:1 (Premium)</h3>
+        <ul className="mt-4 space-y-2 text-lg leading-relaxed text-neutral-300">
+          <li className="flex items-center gap-2">
+            <span className="inline-block h-2 w-2 rounded-full" style={{ background: GOLD }} />
+            Indywidualna opieka trenerska
+          </li>
+          <li className="flex items-center gap-2">
+            <span className="inline-block h-2 w-2 rounded-full" style={{ background: GOLD }} />
+            Stały kontakt 1:1 i dostosowana strategia
+          </li>
+        </ul>
+        <div className="mt-10">
+          <a href="hhttps://calendly.com/mateuszgarbas/darmowa_sesja_konsultacyjna" className={whiteButtonClass} target="_blank" rel="noopener noreferrer">
+            Umów konsultację
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* OPINIE */}
 <section id="opinie" className="scroll-mt-24 py-16 border-t border-neutral-800">
