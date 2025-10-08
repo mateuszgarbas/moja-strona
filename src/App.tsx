@@ -25,13 +25,6 @@ const REVIEWS: [string, string][] = [
   ["Miłosz", "Rewelacyjna współpraca! Trener stworzył dla mnie plan treningowy, który działa i daje satysfakcję."]
 ];
 
-/** Pakiety */
-const PACKAGES = [
-  { title: "Pakiet Essential", features: ["Raporty co 4 tygodnie", "Pełne prowadzenie treningowe", "Monitorowanie diety"] },
-  { title: "Pakiet Essential Plus", features: ["Raporty co 2 tygodnie", "Pełne prowadzenie treningowe", "Monitorowanie diety", "Kontakt w razie pytań" , "Gwarancja satysfakcji"] },
-  { title: "Pakiet PRO", features: ["Raporty co tydzień", "Pełne prowadzenie treningowe", "Monitorowanie diety", "Analiza psychologiczna motywacji", "Priorytetowy kontakt" , "Gwarancja satysfakcji"] }
-];
-
 /** Hook: sprawdzanie czy element jest w widoku */
 function useInView(ref: React.RefObject<HTMLElement | null>, rootMargin = "0px") {
   const [inView, setInView] = useState(false);
