@@ -218,7 +218,7 @@ const [isHovering] = useState(false);
       <a href="#opinie" className="transition-colors duration-200 hover:text-[#d4af37]">OPINIE</a>
       <a href="#faq" className="transition-colors duration-200 hover:text-[#d4af37]">FAQ</a>
       <a
-  href="https://calendly.com/mateuszgarbas/45min" 
+  href="https://calendly.com/mateuszgarbas/darmowa_sesja_konsultacyjna" 
   target="_blank" 
   rel="noopener noreferrer"
   className="px-4 py-2 text-sm font-bold rounded-2xl text-black bg-white shadow-[0_0_15px_rgba(255,255,255,0.8)] hover:shadow-[0_0_25px_rgba(255,255,255,1)] transition-all duration-300 md:px-8 md:py-4 md:text-xl"
@@ -237,7 +237,7 @@ const [isHovering] = useState(false);
         <a href="#opinie" onClick={() => setMenuOpen(false)} className="hover:text-[#d4af37]">OPINIE</a>
         <a href="#faq" onClick={() => setMenuOpen(false)} className="hover:text-[#d4af37]">FAQ</a>
         <a
-          href="https://calendly.com/mateuszgarbas/45min"
+          href="https://calendly.com/mateuszgarbas/darmowa_sesja_konsultacyjna"
           onClick={() => setMenuOpen(false)}
           className="px-4 py-3 text-center rounded-2xl text-black bg-white font-bold shadow hover:shadow-lg transition"
         >
@@ -269,7 +269,7 @@ const [isHovering] = useState(false);
             {/* Przyciski */}
             <div className="mt-6 flex gap-4 flex-wrap justify-center md:justify-start">
   <a
-    href="https://calendly.com/mateuszgarbas/45min"
+    href="https://calendly.com/mateuszgarbas/darmowa_sesja_konsultacyjna"
     className="text-xl px-8 py-4 font-bold rounded-2xl text-black"
     style={{
       backgroundColor: "#fff200", // neon yellow
@@ -705,7 +705,7 @@ const [isHovering] = useState(false);
 </div>
     <div className="text-center">
       <a
-        href="https://calendly.com/mateuszgarbas/45min"
+        href="https://calendly.com/mateuszgarbas/darmowa_sesja_konsultacyjna"
         target="_blank"
         rel="noopener noreferrer"
         className="inline-block px-8 py-4 rounded-2xl font-bold text-black text-lg transition-all duration-300"
