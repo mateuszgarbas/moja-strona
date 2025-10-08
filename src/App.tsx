@@ -526,7 +526,7 @@ const [isHovering] = useState(false);
           </li>
         </ul>
         <div className="mt-10">
-          <a href="hhttps://drive.google.com/drive/folders/12aqcaEGqrgTMNW3Xa4Dkh0oDujL1PuvP?usp=drive_link" className={whiteButtonClass} target="_blank">
+          <a href="https://drive.google.com/drive/folders/12aqcaEGqrgTMNW3Xa4Dkh0oDujL1PuvP?usp=drive_link" className={whiteButtonClass} target="_blank">
             Pobierz za darmo
           </a>
         </div>
@@ -566,7 +566,7 @@ const [isHovering] = useState(false);
           </li>
         </ul>
         <div className="mt-10">
-          <a href="hhttps://calendly.com/mateuszgarbas/darmowa_sesja_konsultacyjna" className={whiteButtonClass} target="_blank">
+          <a href="https://calendly.com/mateuszgarbas/darmowa_sesja_konsultacyjna" className={whiteButtonClass} target="_blank">
             Umów konsultację
           </a>
         </div>
