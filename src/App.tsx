@@ -544,7 +544,7 @@ const [isHovering] = useState(false);
   </ul>
   <p className="mb-6 font-semibold">
     ✅ Efekt: <b>najszybsza droga do formy życia</b> – zero zgadywania i marnowania czasu.
-    <br />📌 Liczba miejsc ograniczona!
+    <br />📌 Liczba miejsc ograniczona!!!
   </p>
   <a
     href="https://calendly.com/mateuszgarbas/darmowa_sesja_konsultacyjna"
