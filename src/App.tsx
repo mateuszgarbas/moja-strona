@@ -5,10 +5,6 @@ import ReactCompareImage from "react-compare-image";
 /** Kolory */
 const GOLD = "#d4af37";
 
-/** Klasy przycisków */
-const whiteButtonClass =
-  "transition-transform active:scale-[.98] bg-white hover:bg-neutral-200 text-black px-6 py-3 font-semibold shadow-lg rounded-2xl";
-
 /** Opinie */
 const REVIEWS: [string, string][] = [
   ["Piotr", "Sympatyczny chłopak, któremu przede wszystkim się chce trenować ludzi takich osób potrzeba pełne zaangażowanie z jego strony przyniosło efekty o których nie śniłem."],
