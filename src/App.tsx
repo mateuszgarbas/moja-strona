@@ -493,85 +493,66 @@ const [isHovering] = useState(false);
         </div>
       </section>
 
-     <section id="oferta" className="scroll-mt-24 py-16 border-t border-neutral-800">
-  <div className="mx-auto max-w-6xl px-4">
-    <div className="text-center">
-      <h2
-        className="text-4xl md:text-5xl font-extrabold mb-6 px-6 py-3 rounded-2xl mx-auto w-fit"
-        style={{
-          color: GOLD,
-          background: "rgba(255, 255, 255, 0.05)",
-          border: `1px solid ${GOLD}`,
-        }}
+     <section id="oferta" className="py-16 bg-black text-white">
+  <div className="max-w-6xl mx-auto px-4 grid gap-8 md:grid-cols-3">
+    
+    {/* Darmowe wyzwanie 30 dni */}
+    <div className="p-8 rounded-2xl shadow-lg bg-gray-900 hover:shadow-2xl transition-all duration-300">
+      <h3 className="text-2xl font-bold text-[#d4af37] mb-4">Darmowe Wyzwanie 30 dni</h3>
+      <ul className="space-y-2 text-lg leading-relaxed mb-4">
+        <li>🔥 Skuteczny plan treningowy na spalanie brzucha</li>
+        <li>🥗 Prosta dieta bez głodówek</li>
+        <li>💪 Jasne zasady i motywacja</li>
+      </ul>
+      <p className="mb-6 font-semibold">✅ Efekt: pierwsze widoczne zmiany sylwetki już po miesiącu!</p>
+      <a
+        href="https://drive.google.com/drive/folders/12aqcaEGqrgTMNW3Xa4Dkh0oDujL1PuvP?usp=drive_link"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block w-full text-center px-6 py-3 rounded-xl font-bold bg-white text-black hover:bg-[#d4af37] hover:text-black transition"
       >
-        Oferta
-      </h2>
+        Dołącz za darmo
+      </a>
     </div>
-    <p className="text-neutral-300 mt-2 max-w-prose mx-auto text-center text-lg">
-      Wybierz jedną z dostępnych opcji i zacznij swoją transformację już dziś.
-    </p>
 
-    <div className="mt-8 grid md:grid-cols-3 gap-6">
-      {/* Box 1 - Darmowe wyzwanie */}
-      <div className="rounded-2xl border border-neutral-800 p-6 pb-12 bg-neutral-900/40">
-        <h3 className="text-xl font-semibold">Darmowe wyzwanie 30 dni</h3>
-        <ul className="mt-4 space-y-2 text-lg leading-relaxed text-neutral-300">
-          <li className="flex items-center gap-2">
-            <span className="inline-block h-2 w-2 rounded-full" style={{ background: GOLD }} />
-            Spalanie tłuszczu z brzucha
-          </li>
-          <li className="flex items-center gap-2">
-            <span className="inline-block h-2 w-2 rounded-full" style={{ background: GOLD }} />
-            Plan treningowy + dieta
-          </li>
-        </ul>
-        <div className="mt-10">
-          <a href="https://drive.google.com/drive/folders/12aqcaEGqrgTMNW3Xa4Dkh0oDujL1PuvP?usp=drive_link" className={whiteButtonClass} target="_blank">
-            Pobierz za darmo
-          </a>
-        </div>
-      </div>
-
-      {/* Box 2 - Płatne wyzwanie */}
-      <div className="rounded-2xl border border-neutral-800 p-6 pb-12 bg-neutral-900/40">
-        <h3 className="text-xl font-semibold">Wyzwanie 90 dni</h3>
-        <ul className="mt-4 space-y-2 text-lg leading-relaxed text-neutral-300">
-          <li className="flex items-center gap-2">
-            <span className="inline-block h-2 w-2 rounded-full" style={{ background: GOLD }} />
-            Spalanie tłuszczu i budowa mięśni
-          </li>
-          <li className="flex items-center gap-2">
-            <span className="inline-block h-2 w-2 rounded-full" style={{ background: GOLD }} />
-            Codzienne wsparcie online
-          </li>
-        </ul>
-        <div className="mt-10">
-          <a href="https://your-payment-link.com" className={whiteButtonClass} target="_blank" rel="noopener noreferrer">
-            Dołącz teraz
-          </a>
-        </div>
-      </div>
-
-      {/* Box 3 - Prowadzenie 1:1 */}
-      <div className="rounded-2xl border border-neutral-800 p-6 pb-12 bg-neutral-900/40">
-        <h3 className="text-xl font-semibold">Prowadzenie 1:1 (Premium)</h3>
-        <ul className="mt-4 space-y-2 text-lg leading-relaxed text-neutral-300">
-          <li className="flex items-center gap-2">
-            <span className="inline-block h-2 w-2 rounded-full" style={{ background: GOLD }} />
-            Indywidualna opieka trenerska
-          </li>
-          <li className="flex items-center gap-2">
-            <span className="inline-block h-2 w-2 rounded-full" style={{ background: GOLD }} />
-            Stały kontakt 1:1 i dostosowana strategia
-          </li>
-        </ul>
-        <div className="mt-10">
-          <a href="https://calendly.com/mateuszgarbas/darmowa_sesja_konsultacyjna" className={whiteButtonClass} target="_blank">
-            Umów konsultację
-          </a>
-        </div>
-      </div>
+    {/* Wyzwanie 90 dni */}
+    <div className="p-8 rounded-2xl shadow-lg bg-gray-900 hover:shadow-2xl transition-all duration-300">
+      <h3 className="text-2xl font-bold text-[#d4af37] mb-4">Wyzwanie 90 dni</h3>
+      <ul className="space-y-2 text-lg leading-relaxed mb-4">
+        <li>🏋️ Spalanie tłuszczu i budowa mięśni</li>
+        <li>📲 Codzienne wsparcie online</li>
+        <li>📈 Monitorowanie progresu i korekty planu</li>
+      </ul>
+      <p className="mb-6 font-semibold">✅ Efekt: lepsza sylwetka, siła i energia w 3 miesiące!</p>
+      <a
+        href="tutaj będzie PAYMENT"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block w-full text-center px-6 py-3 rounded-xl font-bold bg-white text-black hover:bg-[#d4af37] hover:text-black transition"
+      >
+        Zapisz się teraz
+      </a>
     </div>
+
+    {/* Prowadzenie 1:1 Premium */}
+    <div className="p-8 rounded-2xl shadow-lg bg-gray-900 hover:shadow-2xl transition-all duration-300">
+      <h3 className="text-2xl font-bold text-[#d4af37] mb-4">Prowadzenie 1:1 (Premium)</h3>
+      <ul className="space-y-2 text-lg leading-relaxed mb-4">
+        <li>🎯 Indywidualna strategia trening + dieta</li>
+        <li>📞 Stały kontakt 1:1 (czat, konsultacje)</li>
+        <li>🧩 Kompleksowa opieka: trening, dieta, regeneracja</li>
+      </ul>
+      <p className="mb-6 font-semibold">✅ Efekt: najszybsza droga do wymarzonej sylwetki. Ograniczona liczba miejsc!</p>
+      <a
+        href="https://calendly.com/mateuszgarbas/darmowa_sesja_konsultacyjna"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block w-full text-center px-6 py-3 rounded-xl font-bold bg-white text-black hover:bg-[#d4af37] hover:text-black transition"
+      >
+        Zarezerwuj miejsce
+      </a>
+    </div>
+
   </div>
 </section>
 
