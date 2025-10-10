@@ -525,7 +525,7 @@ const [isHovering] = useState(false);
     ✅ Efekt: <b>5+ kg mniej tłuszczu</b>, zarysowane mięśnie i energia, jakiej dawno nie miałeś.
   </p>
   <a
-    href="TUTAJ_BĘDZIE_PAYMENT"
+    href="https://buy.stripe.com/bJeaEX0tC4pO29w5zX2cg00"
     target="_blank"
     rel="noopener noreferrer"
     className="block w-full text-center px-6 py-3 rounded-xl font-bold bg-white text-black hover:bg-[#d4af37] hover:text-black transition"
