@@ -496,7 +496,7 @@ const [isHovering] = useState(false);
 <div className="p-8 rounded-2xl shadow-lg bg-gray-900 hover:shadow-2xl transition-all duration-300">
   <h3 className="text-2xl font-bold text-[#d4af37] mb-4">Darmowe Wyzwanie 30 dni</h3>
   <ul className="space-y-2 text-lg leading-relaxed mb-4">
-    <li>🔥 Plan treningowy do wyboru: <b>siłownia albo dom</b> – bez wymówek, startujesz tam, gdzie jesteś.</li>
+    <li>🔥 Dzień treningowy do wyboru: <b>siłownia albo dom</b> – bez wymówek, startujesz tam, gdzie jesteś.</li>
     <li>🥗 Kilka szybkich przepisów <b>high protein</b>, które spalają tłuszcz i dają energię.</li>
     <li>💪 Bonusy, które pomogą Ci utrzymać systematyczność przez cały miesiąc.</li>
   </ul>
@@ -517,12 +517,12 @@ const [isHovering] = useState(false);
 <div className="p-8 rounded-2xl shadow-lg bg-gray-900 hover:shadow-2xl transition-all duration-300">
   <h3 className="text-2xl font-bold text-[#d4af37] mb-4">Wyzwanie 90 dni</h3>
   <ul className="space-y-2 text-lg leading-relaxed mb-4">
-    <li>🏋️ Gotowy plan treningowy na <b>90 dni</b> – krok po kroku, zero zgadywania.</li>
+    <li>🏋️ Kompleksowy plan treningowy na <b>90 dni</b> – krok po kroku, nie zgadujesz co masz robić.</li>
     <li>🥩 Sprawdzone przepisy <b>high protein</b> – smaczne i sycące, bez głodówek.</li>
     <li>🚀 Bonusy, które przyspieszą spalanie tłuszczu i pomogą Ci wytrwać do końca.</li>
   </ul>
   <p className="mb-6 font-semibold">
-    ✅ Efekt: <b>5–10 kg mniej tłuszczu</b>, pierwsze mięśnie i energia, jakiej dawno nie miałeś.
+    ✅ Efekt: <b>5+ kg mniej tłuszczu</b>, zarysowane mięśnie i energia, jakiej dawno nie miałeś.
   </p>
   <a
     href="TUTAJ_BĘDZIE_PAYMENT"
@@ -530,7 +530,7 @@ const [isHovering] = useState(false);
     rel="noopener noreferrer"
     className="block w-full text-center px-6 py-3 rounded-xl font-bold bg-white text-black hover:bg-[#d4af37] hover:text-black transition"
   >
-    Zapisz się teraz
+    Pobierz Teraz
   </a>
 </div>
 
@@ -543,8 +543,8 @@ const [isHovering] = useState(false);
     <li>🧩 Kompleksowa opieka: trening, dieta, regeneracja i suplementacja.</li>
   </ul>
   <p className="mb-6 font-semibold">
-    ✅ Efekt: <b>najszybsza droga do formy życia</b> – zero zgadywania i marnowania czasu.
-    <br />📌 Liczba miejsc ograniczona!!!
+    ✅ Efekt: <b>najszybsza droga do formy życia</b> – pełne prowadzenie i oszczędność twojego czasu.
+    <br />📌 Liczba miejsc ograniczona!
   </p>
   <a
     href="https://calendly.com/mateuszgarbas/darmowa_sesja_konsultacyjna"
@@ -552,7 +552,7 @@ const [isHovering] = useState(false);
     rel="noopener noreferrer"
     className="block w-full text-center px-6 py-3 rounded-xl font-bold bg-white text-black hover:bg-[#d4af37] hover:text-black transition"
   >
-    Zarezerwuj miejsce
+    Zarezerwuj swoje miejsce
   </a>
 </div>
 
