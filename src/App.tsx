@@ -613,7 +613,7 @@ const [isHovering] = useState(false);
       </section>
 
       {/* GALERIA PRZEMIAN */}
-      <section id="galeria" className="py-16 border-t border-neutral-800">
+      <section id="galeria" className="hidden py-16 border-t border-neutral-800">
         <div className="mx-auto max-w-6xl px-4">
           <h2
             className="text-4xl md:text-5xl font-extrabold mb-10 text-center px-6 py-3 rounded-2xl w-fit mx-auto"
