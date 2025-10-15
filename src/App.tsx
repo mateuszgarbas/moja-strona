@@ -1,6 +1,9 @@
 import { motion, animate } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import ReactCompareImage from "react-compare-image";
+/** EMBED: YouTube + Calendly */
+const YT_ID = "https://www.youtube.com/watch?v=RKjUnwLf5l0";
+const CALENDLY_URL = "https://calendly.com/mateuszgarbas/darmowa_sesja_konsultacyjna";
 
 /** Kolory */
 const GOLD = "#d4af37";
@@ -165,6 +168,46 @@ const [isHovering] = useState(false);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
+  // Calendly: załaduj CSS, skrypt i zainicjuj widget inline tylko raz
+useEffect(() => {
+  // CSS Calendly
+  if (!document.getElementById("calendly-css")) {
+    const link = document.createElement("link");
+    link.id = "calendly-css";
+    link.rel = "stylesheet";
+    link.href = "https://assets.calendly.com/assets/external/widget.css";
+    document.head.appendChild(link);
+  }
+
+  // Funkcja inicjująca widget inline
+  const init = () => {
+    const parent = document.getElementById("calendly-embed");
+    // @ts-ignore
+    if (parent && window.Calendly) {
+      // @ts-ignore
+      window.Calendly.initInlineWidget({
+        url: CALENDLY_URL,
+        parentElement: parent,
+        prefill: {},
+        utm: {}
+      });
+    }
+  };
+
+  // Skrypt Calendly (tylko raz)
+  const existing = document.getElementById("calendly-script");
+  if (!existing) {
+    const s = document.createElement("script");
+    s.id = "calendly-script";
+    s.src = "https://assets.calendly.com/assets/external/widget.js";
+    s.async = true;
+    s.onload = init;
+    document.body.appendChild(s);
+  } else {
+    init();
+  }
+}, []);
+
   
   return (
   <div className="min-h-screen bg-black text-white antialiased overflow-x-hidden">
@@ -175,6 +218,33 @@ const [isHovering] = useState(false);
   }`}
 >
   <nav className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+    
+    {/* VIDEO + CALENDLY (na samej górze) */}
+<section id="intro-embed" className="border-b border-neutral-800 bg-black">
+  <div className="mx-auto max-w-6xl px-4 pt-6 pb-10">
+    {/* YouTube */}
+    <div className="w-full aspect-video rounded-2xl overflow-hidden border border-neutral-800 shadow-[0_0_30px_rgba(255,255,255,0.05)]">
+      <iframe
+        className="w-full h-full"
+        src={`https://www.youtube.com/embed/${YT_ID}?rel=0&modestbranding=1&playsinline=1`}
+        title="YouTube video"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerPolicy="strict-origin-when-cross-origin"
+        allowFullScreen
+        loading="lazy"
+      />
+    </div>
+
+    {/* Calendly inline */}
+    <div
+      id="calendly-embed"
+      className="w-full min-h-[780px] rounded-2xl border border-neutral-800 bg-neutral-900/40 mt-6"
+      aria-label="Kalendarz rezerwacji — Calendly"
+    />
+  </div>
+</section>
+
+    
     {/* Logo */}
     <a href="#top" className="flex items-center gap-2 font-semibold text-lg">
       <img
