@@ -257,8 +257,9 @@ useEffect(() => {
 </header>
 
 <section id="intro" className="border-b border-neutral-800 bg-black flex justify-center">
-  <div className="w-full max-w-6xl mx-auto px-4 pt-12 pb-16">
-    {/* YouTube */}
+  {/* było: max-w-6xl pt-12 pb-16 → dajemy węższy kontener i mniejsze odstępy */}
+  <div className="w-full max-w-4xl mx-auto px-4 pt-8 pb-12">
+    {/* YouTube — bez zmian aspect, ale węższy wrapper = mniejsze wideo */}
     <div className="w-full aspect-video rounded-2xl overflow-hidden border border-neutral-800 shadow-[0_0_30px_rgba(255,255,255,0.1)]">
       <iframe
         className="w-full h-full"
@@ -271,19 +272,19 @@ useEffect(() => {
       />
     </div>
 
-    {/* Calendly — oficjalny embed */}
+    {/* Calendly — trochę niższe (z 700 → 600) i ten sam węższy kontener */}
     <div
-      className="calendly-inline-widget mt-10 rounded-2xl border border-neutral-800 bg-neutral-900/40"
+      className="calendly-inline-widget mt-8 rounded-2xl border border-neutral-800 bg-neutral-900/40"
       data-url="https://calendly.com/mateuszgarbas/darmowa_sesja_konsultacyjna?hide_gdpr_banner=1"
-      style={{ minWidth: 320, height: 700 }}
-    ></div>
+      style={{ minWidth: 320, height: 600 }}
+    />
 
-    {/* Skrypt Calendly */}
+    {/* Skrypt Calendly (jeśli nie masz go globalnie w index.html) */}
     <script
       type="text/javascript"
       src="https://assets.calendly.com/assets/external/widget.js"
       async
-    ></script>
+    />
   </div>
 </section>
 
