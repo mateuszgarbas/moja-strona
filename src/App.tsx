@@ -2,9 +2,7 @@ import { motion, animate } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import ReactCompareImage from "react-compare-image";
 /** === EMBED: YouTube + Calendly === */
-const YT_ID = "https://www.youtube.com/watch?v=jTXwQr8kB2o";
-const CALENDLY_URL = "https://calendly.com/mateuszgarbas/darmowa_sesja_konsultacyjna";
-
+const YT_ID = "https://youtu.be/Ebm4geyI0YA?si=exuVJlYuU8sMTev_";
 /** Kolory */
 const GOLD = "#d4af37";
 
