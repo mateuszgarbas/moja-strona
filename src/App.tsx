@@ -168,9 +168,7 @@ const [isHovering] = useState(false);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  // === Calendly inline init ===
 useEffect(() => {
-  // CSS Calendly
   if (!document.getElementById("calendly-css")) {
     const link = document.createElement("link");
     link.id = "calendly-css";
@@ -178,32 +176,12 @@ useEffect(() => {
     link.href = "https://assets.calendly.com/assets/external/widget.css";
     document.head.appendChild(link);
   }
-
-  // Skrypt + inicjalizacja
-  const initCalendly = () => {
-    const el = document.getElementById("calendly-embed");
-    // @ts-ignore
-    if (el && window.Calendly) {
-      // @ts-ignore
-      window.Calendly.initInlineWidget({
-        url: CALENDLY_URL,
-        parentElement: el,
-        prefill: {},
-        utm: {}
-      });
-    }
-  };
-
-  const existingScript = document.getElementById("calendly-script");
-  if (!existingScript) {
+  if (!document.getElementById("calendly-script")) {
     const s = document.createElement("script");
     s.id = "calendly-script";
     s.src = "https://assets.calendly.com/assets/external/widget.js";
     s.async = true;
-    s.onload = initCalendly;
     document.body.appendChild(s);
-  } else {
-    initCalendly();
   }
 }, []);
 
@@ -280,10 +258,7 @@ useEffect(() => {
   )}
 </header>
 
-<section
-  id="intro"
-  className="border-b border-neutral-800 bg-black flex justify-center"
->
+<section id="intro" className="border-b border-neutral-800 bg-black flex justify-center">
   <div className="w-full max-w-6xl mx-auto px-4 pt-12 pb-16">
     {/* YouTube */}
     <div className="w-full aspect-video rounded-2xl overflow-hidden border border-neutral-800 shadow-[0_0_30px_rgba(255,255,255,0.1)]">
@@ -298,11 +273,11 @@ useEffect(() => {
       />
     </div>
 
-    {/* Calendly */}
+    {/* Calendly — oficjalny embed */}
     <div
-      id="calendly-embed"
-      className="w-full min-h-[780px] rounded-2xl border border-neutral-800 bg-neutral-900/40 mt-10 shadow-[0_0_30px_rgba(255,255,255,0.05)]"
-      aria-label="Kalendarz rezerwacji — Calendly"
+      className="calendly-inline-widget mt-10 rounded-2xl border border-neutral-800 bg-neutral-900/40"
+      data-url="https://calendly.com/mateuszgarbas/darmowa_sesja_konsultacyjna?hide_event_type_details=1&hide_gdpr_banner=1"
+      style={{ minWidth: 320, height: 700 }}
     />
   </div>
 </section>
