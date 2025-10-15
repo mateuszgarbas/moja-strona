@@ -274,9 +274,16 @@ useEffect(() => {
     {/* Calendly — oficjalny embed */}
     <div
       className="calendly-inline-widget mt-10 rounded-2xl border border-neutral-800 bg-neutral-900/40"
-      data-url="https://calendly.com/mateuszgarbas/darmowa_sesja_konsultacyjna?hide_event_type_details=1&hide_gdpr_banner=1"
+      data-url="https://calendly.com/mateuszgarbas/darmowa_sesja_konsultacyjna?hide_gdpr_banner=1"
       style={{ minWidth: 320, height: 700 }}
-    />
+    ></div>
+
+    {/* Skrypt Calendly */}
+    <script
+      type="text/javascript"
+      src="https://assets.calendly.com/assets/external/widget.js"
+      async
+    ></script>
   </div>
 </section>
 
