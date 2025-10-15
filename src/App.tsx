@@ -219,10 +219,13 @@ useEffect(() => {
 >
   <nav className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
     
-    {/* VIDEO + CALENDLY (na samej górze) */}
-<section id="intro-embed" className="border-b border-neutral-800 bg-black">
-  <div className="mx-auto max-w-6xl px-4 pt-6 pb-10">
-    {/* YouTube */}
+    {/* === VIDEO + CALENDLY pod nawigacją === */}
+<section
+  id="intro-embed"
+  className="border-b border-neutral-800 bg-black flex justify-center"
+>
+  <div className="w-full max-w-6xl px-4 pt-10 pb-16">
+    {/* WIDEO */}
     <div className="w-full aspect-video rounded-2xl overflow-hidden border border-neutral-800 shadow-[0_0_30px_rgba(255,255,255,0.05)]">
       <iframe
         className="w-full h-full"
@@ -235,14 +238,15 @@ useEffect(() => {
       />
     </div>
 
-    {/* Calendly inline */}
+    {/* CALENDLY */}
     <div
       id="calendly-embed"
-      className="w-full min-h-[780px] rounded-2xl border border-neutral-800 bg-neutral-900/40 mt-6"
+      className="w-full min-h-[780px] rounded-2xl border border-neutral-800 bg-neutral-900/40 mt-10 shadow-[0_0_30px_rgba(255,255,255,0.05)]"
       aria-label="Kalendarz rezerwacji — Calendly"
     />
   </div>
 </section>
+
 
     
     {/* Logo */}
